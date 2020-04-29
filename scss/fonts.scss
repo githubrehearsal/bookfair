@@ -1,0 +1,75 @@
+//引入思源黑體-----
+@import url('https://fonts.googleapis.com/css?family=Noto+Sans+TC&display=swap');
+
+
+//文字字體-----
+*{
+	font-family: 'Noto Sans TC', 'Microsoft JhengHei', 'Arial', 'Helvetica', 'sans-serif';
+}
+
+//中字-大標題
+@mixin ch-title-l($size) {
+    font-size: $size;
+    letter-spacing: $size*0.25;
+    white-space: nowrap;
+}
+//中字-小標題
+@mixin ch-title-m($size) {
+    font-size: $size;
+    line-height: $size*1.4;
+    letter-spacing: $size*0.05;
+}
+
+
+//英字-大標題
+@mixin en-title-l($size) {
+    font-size: $size;
+    letter-spacing: $size*0.1;
+    white-space: nowrap;
+}
+//英字-小標題
+@mixin en-title-m($size) {
+    font-size: $size;
+    line-height: $size*1.2;
+    letter-spacing: $size*0.05;   
+}
+
+
+//中字-大內文
+@mixin ch-text-l($size) {
+    font-size: $size; 
+    letter-spacing: $size*0.15;
+    line-height: $size*2; 
+}
+//英字-大內文
+@mixin en-text-l($size) {
+    font-size: $size; 
+    letter-spacing: $size*0.01;
+    line-height: $size*1.5; 
+}
+//中字-小內文
+@mixin ch-text-m($size) {
+    font-size: $size; 
+    letter-spacing: $size*0.05;
+    line-height: $size*1.5; 
+}
+//英字-小內文
+@mixin en-text-m($size) {
+    font-size: $size; 
+    letter-spacing: $size*0.01;
+    line-height: $size*1.5; 
+}
+
+
+//中文-輔助用字
+@mixin ch-others-text($size){
+    font-size: $size;
+    letter-spacing: $size*0.25;
+    line-height: $size*2;    
+}
+//英文-輔助用字
+@mixin en-others-text($size){
+    font-size: $size;
+    letter-spacing: $size*0.1;
+    line-height: $size*2;    
+}
