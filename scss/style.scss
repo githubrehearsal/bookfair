@@ -372,11 +372,12 @@ header{
     }
 }
 .others{
-    @include p-y(2.5%, 5%);
+    @include p-y(2.5%, 2.5%);
     @include m-x(10%, 10%);
     border-top: 1px solid $light-gray;
     span{
-        font-size: 24px;
+        font-size: 16px;
+        font-weight: bold;
         color: $line;
     }
     ul{

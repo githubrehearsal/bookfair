@@ -4071,14 +4071,15 @@ header .menu > li:last-child a {
 
 .others {
   padding-top: 2.5%;
-  padding-bottom: 5%;
+  padding-bottom: 2.5%;
   margin-left: 10%;
   margin-right: 10%;
   border-top: 1px solid #c8c8c8;
 }
 
 .others span {
-  font-size: 24px;
+  font-size: 16px;
+  font-weight: bold;
   color: #1d9d27;
 }
 
