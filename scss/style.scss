@@ -299,6 +299,27 @@ header{
             }
         }
     }
+    .main-btn{
+        @include m-y(5%, 2.5%);
+        @include p-y(20px, 20px);
+        @include translate(0, 0);
+        width: 100%;
+        text-align: center;
+        display: block;
+        background-color: $line;
+        box-shadow: 0 7.5px 0 $line*0.75;
+        color: $white;
+        font-size: 24px;
+        font-weight: bold;
+        transition: 0.1s linear;
+        letter-spacing: 4px;
+        border-radius: 10px;
+    }
+    .main-btn:hover{
+        @include translate(0, 7.5px);
+        background-color: $line*0.9;
+        box-shadow: 0 0px 0 $line*0.75;        
+    }
 }
 .activities{
     @include m-y(2.5%, 2.5%);
@@ -318,27 +339,6 @@ header{
         span{
             color: $line;
         }
-    }
-    a{
-        @include m-y(25px, 25px);
-        @include p-y(20px, 20px);
-        @include translate(0, 0);
-        width: 100%;
-        text-align: center;
-        display: block;
-        background-color: $line;
-        box-shadow: 0 7.5px 0 $line*0.75;
-        color: $white;
-        font-size: 24px;
-        font-weight: bold;
-        transition: 0.1s linear;
-        letter-spacing: 4px;
-        border-radius: 10px;
-    }
-    a:hover{
-        @include translate(0, 7.5px);
-        background-color: $line*0.9;
-        box-shadow: 0 0px 0 $line*0.75;        
     }
     .activities-steps{
         @include flex-row;

@@ -3965,6 +3965,36 @@ header .menu > li:last-child a {
   margin-bottom: 5%;
 }
 
+.books-list .main-btn {
+  margin-top: 5%;
+  margin-bottom: 2.5%;
+  padding-top: 20px;
+  padding-bottom: 20px;
+  -webkit-transform: translate(0, 0);
+          transform: translate(0, 0);
+  width: 100%;
+  text-align: center;
+  display: block;
+  background-color: #1d9d27;
+  -webkit-box-shadow: 0 7.5px 0 #16761d;
+          box-shadow: 0 7.5px 0 #16761d;
+  color: whitesmoke;
+  font-size: 24px;
+  font-weight: bold;
+  -webkit-transition: 0.1s linear;
+  transition: 0.1s linear;
+  letter-spacing: 4px;
+  border-radius: 10px;
+}
+
+.books-list .main-btn:hover {
+  -webkit-transform: translate(0, 7.5px);
+          transform: translate(0, 7.5px);
+  background-color: #1a8d23;
+  -webkit-box-shadow: 0 0px 0 #16761d;
+          box-shadow: 0 0px 0 #16761d;
+}
+
 .activities {
   margin-top: 2.5%;
   margin-bottom: 2.5%;
@@ -3990,36 +4020,6 @@ header .menu > li:last-child a {
 
 .activities h2 span {
   color: #1d9d27;
-}
-
-.activities a {
-  margin-top: 25px;
-  margin-bottom: 25px;
-  padding-top: 20px;
-  padding-bottom: 20px;
-  -webkit-transform: translate(0, 0);
-          transform: translate(0, 0);
-  width: 100%;
-  text-align: center;
-  display: block;
-  background-color: #1d9d27;
-  -webkit-box-shadow: 0 7.5px 0 #16761d;
-          box-shadow: 0 7.5px 0 #16761d;
-  color: whitesmoke;
-  font-size: 24px;
-  font-weight: bold;
-  -webkit-transition: 0.1s linear;
-  transition: 0.1s linear;
-  letter-spacing: 4px;
-  border-radius: 10px;
-}
-
-.activities a:hover {
-  -webkit-transform: translate(0, 7.5px);
-          transform: translate(0, 7.5px);
-  background-color: #1a8d23;
-  -webkit-box-shadow: 0 0px 0 #16761d;
-          box-shadow: 0 0px 0 #16761d;
 }
 
 .activities .activities-steps {
