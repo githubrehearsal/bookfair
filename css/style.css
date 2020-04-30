@@ -1,3 +1,4 @@
+@charset "UTF-8";
 @import url("https://fonts.googleapis.com/css?family=Noto+Sans+TC&display=swap");
 html, body, div, span, applet, object, iframe,
 h1, h2, h3, h4, h5, h6, p, blockquote, pre,
@@ -3525,6 +3526,7 @@ body {
   overflow-x: hidden;
 }
 
+/*主色*/
 .line {
   color: #1d9d27;
 }
@@ -3533,6 +3535,83 @@ body {
   color: #ff7200;
 }
 
+/*js效果---*/
+/*書展頁籤開啟*/
+.books-fair-btn-active {
+  border: 1px solid #1d9d27 !important;
+  color: #1d9d27 !important;
+}
+
+/*全部書展開啟*/
+.books-fair-all-active {
+  background-color: #1d9d27 !important;
+  color: whitesmoke !important;
+  border-color: #1d9d27 !important;
+}
+
+/*次選單開啟*/
+.books-fair-list-active {
+  color: #1d9d27 !important;
+}
+
+/*動畫效果*---/
+/*主選單*/
+.header-effect {
+  -webkit-animation: header-effect 0.5s linear forwards;
+          animation: header-effect 0.5s linear forwards;
+}
+
+@-webkit-keyframes header-effect {
+  0% {
+    -webkit-transform: translate(0, -50px);
+            transform: translate(0, -50px);
+  }
+  100% {
+    -webkit-transform: translate(0, 0);
+            transform: translate(0, 0);
+  }
+}
+
+@keyframes header-effect {
+  0% {
+    -webkit-transform: translate(0, -50px);
+            transform: translate(0, -50px);
+  }
+  100% {
+    -webkit-transform: translate(0, 0);
+            transform: translate(0, 0);
+  }
+}
+
+/*活動主旨*/
+.main-content-effect {
+  -webkit-animation: move-effect 0.5s 0.75s linear forwards;
+          animation: move-effect 0.5s 0.75s linear forwards;
+}
+
+@-webkit-keyframes move-effect {
+  0% {
+    bottom: 0;
+    opacity: 0;
+  }
+  100% {
+    bottom: 5%;
+    opacity: 1;
+  }
+}
+
+@keyframes move-effect {
+  0% {
+    bottom: 0;
+    opacity: 0;
+  }
+  100% {
+    bottom: 5%;
+    opacity: 1;
+  }
+}
+
+/*主選單*/
 header {
   position: fixed;
   top: 0;
@@ -3566,26 +3645,6 @@ header .menu li a {
   display: block;
 }
 
-header .menu li ul {
-  margin-top: 1px;
-  position: absolute;
-  top: none;
-  left: 0;
-  right: 0;
-  bottom: none;
-  margin: auto;
-  background-color: whitesmoke;
-  -webkit-box-sizing: border-box;
-          box-sizing: border-box;
-  display: none;
-}
-
-header .menu li ul li {
-  margin-left: 10%;
-  margin-right: 10%;
-  border-bottom: 1px solid #c8c8c8;
-}
-
 header .menu > li:first-child {
   margin-right: auto;
 }
@@ -3606,162 +3665,15 @@ header .menu > li:last-child a {
   color: #1d9d27;
 }
 
-.layoutA {
-  margin-left: 10%;
-  margin-right: 10%;
-  margin-top: 5%;
-  margin-bottom: 2.5%;
-}
-
-.layoutA h1 {
-  padding-bottom: 1%;
-  font-size: 60px;
-  line-height: 90px;
-  letter-spacing: 6px;
-  font-weight: bold;
-  color: #191919;
-}
-
-.layoutA > p {
-  padding-top: 0.5%;
-  padding-bottom: 0.5%;
-  font-size: 18px;
-  letter-spacing: 2px;
-  color: #505050;
-}
-
-.layoutA .book-fair {
-  margin-top: 2.5%;
-  margin-bottom: 2.5%;
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-orient: horizontal;
-  -webkit-box-direction: normal;
-      -ms-flex-direction: row;
-          flex-direction: row;
-  width: 100%;
-}
-
-.layoutA .book-fair .book-fair-area {
-  width: 25%;
-  cursor: pointer;
-}
-
-.layoutA .book-fair .book-fair-area .book-fair-area-title {
-  height: 100%;
-  position: relative;
-}
-
-.layoutA .book-fair .book-fair-area .book-fair-area-title .book-fair-area-title-tag {
-  position: absolute;
-  top: none;
-  left: 15px;
-  right: none;
-  bottom: 15px;
-  margin: auto;
-  height: 100px;
-  width: 100px;
-  background-color: #191919;
-  color: whitesmoke;
-  border-radius: 10px;
-  text-align: center;
-  -webkit-box-shadow: 0 0 5px #191919;
-          box-shadow: 0 0 5px #191919;
-  z-index: 9;
-}
-
-.layoutA .book-fair .book-fair-area .book-fair-area-title .book-fair-area-title-tag p {
-  position: absolute;
-  top: 0;
-  left: 0;
-  right: 0;
-  bottom: 0;
-  margin: auto;
-  height: 50px;
-  width: 50px;
-  font-size: 16px;
-  line-height: 24px;
-  z-index: 999;
-  color: #c8c8c8;
-}
-
-.layoutA .book-fair .book-fair-area .book-fair-area-title .book-fair-area-title-tag:after {
-  position: absolute;
-  top: 0;
-  left: 0;
-  right: 0;
-  bottom: 0;
-  margin: auto;
-  content: "";
-  height: 80%;
-  width: 80%;
-  border: 1px solid #c8c8c8;
-  border-radius: 10px;
-}
-
-.layoutA .book-fair .book-fair-area .book-fair-area-title .book-fair-area-title-img {
-  height: 100%;
-  width: 100%;
-  background-size: cover;
-  background-position: center center;
-  position: relative;
-  -webkit-box-shadow: 0 0 0 #191919;
-          box-shadow: 0 0 0 #191919;
-  -webkit-transition: 0.5s linear;
-  transition: 0.5s linear;
-}
-
-.layoutA .book-fair .book-fair-area .book-fair-area-title .book-fair-area-title-img p {
-  padding-top: 100%;
-  position: absolute;
-  top: 0;
-  left: 0;
-  right: 0;
-  bottom: 0;
-  margin: auto;
-  background-color: rgba(25, 25, 25, 0.75);
-  width: 100%;
-  font-size: 24px;
-  line-height: 36px;
-  letter-spacing: 2px;
-  text-align: center;
-  color: #c8c8c8;
-  opacity: 0;
-  visibility: hidden;
-  -webkit-transition: 0.5s linear;
-  transition: 0.5s linear;
-}
-
-.layoutA .book-fair .book-fair-area .book-fair-area-title .title-img1 {
-  background-color: #c8c8c8;
-}
-
-.layoutA .book-fair .book-fair-area .book-fair-area-title .title-img2 {
-  background-color: #969696;
-}
-
-.layoutA .book-fair .book-fair-area .book-fair-area-title .title-img3 {
-  background-color: #c8c8c8;
-}
-
-.layoutA .book-fair .book-fair-area .book-fair-area-title .title-img4 {
-  background-color: #969696;
-}
-
-.layoutA .book-fair .book-fair-area .book-fair-area-title .book-fair-area-title-img:hover p {
-  visibility: visible;
-  opacity: 1;
-}
-
-.layoutB {
-  margin-bottom: 5%;
+/*主視覺*/
+.main {
   height: 100vh;
+  width: 100%;
   background-color: #dddddd;
-  position: relative;
+  /*活動主題*/
 }
 
-.layoutB .book-fair-content {
+.main .main-content {
   margin-left: 10%;
   margin-right: 10%;
   padding-left: 25px;
@@ -3771,235 +3683,39 @@ header .menu > li:last-child a {
   position: absolute;
   top: none;
   left: 10%;
-  right: none;
-  bottom: 5%;
+  right: 10%;
+  bottom: 0;
   margin: auto;
   background-color: rgba(245, 245, 245, 0.8);
+  opacity: 0;
 }
 
-.layoutB .book-fair-content h1 {
+.main .main-content h1 {
   margin-top: 1%;
-  margin-bottom: 2%;
-  font-size: 48px;
+  margin-bottom: 1%;
+  font-size: 42px;
+  line-height: 63px;
   letter-spacing: 4px;
   font-weight: bold;
   color: #191919;
 }
 
-.layoutB .book-fair-content p {
-  padding-top: 0.75%;
-  padding-bottom: 0.75%;
+.main .main-content p {
+  padding-top: 0.25%;
+  padding-bottom: 0.25%;
   font-size: 18px;
+  line-height: 27px;
   letter-spacing: 2px;
   color: #505050;
 }
 
-.books-list {
-  padding-top: 2.5%;
-  padding-bottom: 2.5%;
-  margin-left: 10%;
-  margin-right: 10%;
-}
-
-.books-list .books-list-btn {
-  -webkit-transition: 0.5s;
-  transition: 0.5s;
-}
-
-.books-list .books-list-btn div {
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-orient: horizontal;
-  -webkit-box-direction: normal;
-      -ms-flex-direction: row;
-          flex-direction: row;
-  position: relative;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
-}
-
-.books-list .books-list-btn div h3 {
-  margin-right: auto;
-  font-size: 36px;
-  font-weight: bold;
-  letter-spacing: 4px;
-}
-
-.books-list .books-list-btn div h3 span {
-  padding-left: 5px;
-  padding-right: 5px;
-  display: inline-block;
-  position: relative;
-  top: -2.5px;
-}
-
-.books-list .books-list-btn div > ul {
-  margin-top: auto;
-  margin-bottom: auto;
-  position: absolute;
-  top: 0;
-  left: none;
-  right: 0;
-  bottom: none;
-  margin: none;
-  width: 190px;
-  background-color: whitesmoke;
-  -webkit-box-shadow: 0 0 5px #c8c8c8;
-          box-shadow: 0 0 5px #c8c8c8;
-  border: 1px solid #c8c8c8;
-  text-align: right;
-}
-
-.books-list .books-list-btn div > ul li a {
-  padding-left: 25px;
-  padding-right: 25px;
-  padding-top: 10px;
-  padding-bottom: 10px;
-  display: block;
-  font-size: 18px;
-  color: whitesmoke;
-  background-color: #1d9d27;
-  -webkit-transition: 0.25s linear;
-  transition: 0.25s linear;
-  letter-spacing: 1px;
-}
-
-.books-list .books-list-btn div > ul li a:hover {
-  background-color: #1a8d23;
-}
-
-.books-list .books-list-btn div > ul li ul {
-  display: none;
-}
-
-.books-list .books-list-btn div > ul li ul li a {
-  padding-top: 10px;
-  padding-bottom: 10px;
-  border-top: 1px solid #c8c8c8;
-  display: block;
-  color: #505050;
-  background-color: whitesmoke;
-  -webkit-transition: 0.25s linear;
-  transition: 0.25s linear;
-}
-
-.books-list .books-list-btn div > ul li ul li a:hover {
-  background-color: #c8c8c8;
-}
-
-.books-list p {
-  padding-top: 2.5%;
-  padding-bottom: 2.5%;
-  font-size: 16px;
-  letter-spacing: 2px;
-  color: #505050;
-}
-
-.books-list .books-list-area {
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-orient: horizontal;
-  -webkit-box-direction: normal;
-      -ms-flex-direction: row;
-          flex-direction: row;
-}
-
-.books-list .books-list-area a {
-  padding-top: 2.5%;
-  padding-bottom: 2.5%;
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-orient: vertical;
-  -webkit-box-direction: normal;
-      -ms-flex-direction: column;
-          flex-direction: column;
-  -ms-flex-pack: distribute;
-      justify-content: space-around;
-  width: 20%;
-}
-
-.books-list .books-list-area a p {
-  font-size: 24px;
-  color: #505050;
-  letter-spacing: 2px;
-  text-align: center;
-}
-
-.books-list .books-list-area a:first-child {
-  margin-right: auto;
-}
-
-.books-list .books-list-area a:nth-child(2), .books-list .books-list-area a:nth-child(3) {
-  margin-left: auto;
-  margin-right: auto;
-}
-
-.books-list .books-list-area a:last-child {
-  margin-left: auto;
-}
-
-.books-list .books-list-area a:nth-child(odd) img {
-  margin-bottom: 5%;
-}
-
-.books-list .books-list-area a:nth-child(odd) p {
-  margin-top: 5%;
-}
-
-.books-list .books-list-area a:nth-child(even) {
-  -webkit-box-orient: vertical;
-  -webkit-box-direction: reverse;
-      -ms-flex-direction: column-reverse;
-          flex-direction: column-reverse;
-}
-
-.books-list .books-list-area a:nth-child(even) img {
-  margin-top: 5%;
-}
-
-.books-list .books-list-area a:nth-child(even) p {
-  margin-bottom: 5%;
-}
-
-.books-list .main-btn {
-  margin-top: 5%;
-  margin-bottom: 2.5%;
-  padding-top: 20px;
-  padding-bottom: 20px;
-  -webkit-transform: translate(0, 0);
-          transform: translate(0, 0);
-  width: 100%;
-  text-align: center;
-  display: block;
-  background-color: #1d9d27;
-  -webkit-box-shadow: 0 7.5px 0 #16761d;
-          box-shadow: 0 7.5px 0 #16761d;
-  color: whitesmoke;
-  font-size: 24px;
-  font-weight: bold;
-  -webkit-transition: 0.1s linear;
-  transition: 0.1s linear;
-  letter-spacing: 4px;
-  border-radius: 10px;
-}
-
-.books-list .main-btn:hover {
-  -webkit-transform: translate(0, 7.5px);
-          transform: translate(0, 7.5px);
-  background-color: #1a8d23;
-  -webkit-box-shadow: 0 0px 0 #16761d;
-          box-shadow: 0 0px 0 #16761d;
-}
-
+/*活動獎勵*/
 .activities {
   margin-top: 2.5%;
   margin-bottom: 2.5%;
   margin-left: 10%;
   margin-right: 10%;
+  /*活動操作步驟*/
 }
 
 .activities .activities-title {
@@ -4011,14 +3727,14 @@ header .menu > li:last-child a {
   display: inline-block;
 }
 
-.activities h2 {
+.activities p {
   font-size: 24px;
   line-height: 36px;
   letter-spacing: 4px;
   color: #505050;
 }
 
-.activities h2 span {
+.activities p span {
   color: #1d9d27;
 }
 
@@ -4032,13 +3748,13 @@ header .menu > li:last-child a {
           flex-direction: row;
 }
 
-.activities .activities-steps div {
-  width: 22.5%;
+.activities .activities-steps .activities-steps-area {
+  width: 20%;
   padding-top: 2.5%;
   padding-bottom: 2.5%;
 }
 
-.activities .activities-steps div p {
+.activities .activities-steps .activities-steps-area .activities-title-area-content p {
   padding-top: 5%;
   padding-bottom: 5%;
   font-size: 24px;
@@ -4047,7 +3763,7 @@ header .menu > li:last-child a {
   font-weight: bold;
 }
 
-.activities .activities-steps div span {
+.activities .activities-steps .activities-steps-area .activities-title-area-content span {
   padding-top: 5%;
   padding-bottom: 5%;
   font-size: 21px;
@@ -4069,6 +3785,210 @@ header .menu > li:last-child a {
   margin-left: auto;
 }
 
+/*主題書展*/
+.books-fair {
+  margin-top: 1.25%;
+  margin-bottom: 2.5%;
+  margin-left: 10%;
+  margin-right: 10%;
+  /*書展選單*/
+  /*全書展選單*/
+  /*書籍區塊*/
+  /*表單按鈕*/
+}
+
+.books-fair .books-fair-btn {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+}
+
+.books-fair .books-fair-btn li {
+  -webkit-transition: 0.5s;
+  transition: 0.5s;
+}
+
+.books-fair .books-fair-btn li a {
+  padding-left: 15px;
+  padding-right: 0;
+  padding-top: 15px;
+  padding-bottom: 15px;
+  font-size: 24px;
+  letter-spacing: 2px;
+  font-weight: 500;
+  display: block;
+  border: 1px solid #c8c8c8;
+  color: #969696;
+  -webkit-transition: background 0.25s linear;
+  transition: background 0.25s linear;
+}
+
+.books-fair .books-fair-btn li a:hover {
+  background-color: #e9e9e9;
+}
+
+.books-fair .books-fair-btn li:first-child {
+  width: 50%;
+}
+
+.books-fair .books-fair-btn li:nth-child(2) {
+  width: 42.5%;
+}
+
+.books-fair .books-fair-btn li:last-child {
+  width: 7.5%;
+  min-width: 125px;
+}
+
+.books-fair .books-fair-btn li:last-child a {
+  padding-left: 0;
+  padding-right: 0;
+  color: #969696;
+  text-align: center;
+}
+
+.books-fair .books-fair-all {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  background-color: whitesmoke;
+  -webkit-box-shadow: 0 3px 10px #e6e6e6;
+          box-shadow: 0 3px 10px #e6e6e6;
+  display: none;
+}
+
+.books-fair .books-fair-all li {
+  border-bottom: 1px solid #c8c8c8;
+  -webkit-transition: 0.25s linear;
+  transition: 0.25s linear;
+}
+
+.books-fair .books-fair-all li a {
+  padding-left: 15px;
+  padding-right: 15px;
+  padding-top: 15px;
+  padding-bottom: 15px;
+  font-size: 24px;
+  letter-spacing: 2px;
+  color: #969696;
+  display: block;
+}
+
+.books-fair .books-fair-all li:last-child {
+  border: none;
+}
+
+.books-fair .books-fair-all li:hover {
+  background-color: #e9e9e9;
+}
+
+.books-fair .book-fair-title {
+  padding-top: 2.5%;
+  padding-bottom: 0;
+  font-size: 36px;
+  letter-spacing: 3px;
+  color: #505050;
+}
+
+.books-fair .book-fair-list p {
+  padding-top: 1.25%;
+  padding-bottom: 0;
+  font-size: 24px;
+  letter-spacing: 2px;
+  color: #969696;
+}
+
+.books-fair .book-fair-list .books-fair-list-area {
+  margin-top: 2.5%;
+  margin-bottom: 2.5%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+}
+
+.books-fair .book-fair-list .books-fair-list-area a {
+  padding-top: 0.5%;
+  padding-bottom: 0.5%;
+  width: 20%;
+  -webkit-transition: 0.5s;
+  transition: 0.5s;
+}
+
+.books-fair .book-fair-list .books-fair-list-area a p {
+  font-size: 16px;
+  color: #505050;
+  letter-spacing: 2px;
+  text-align: center;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+  overflow: hidden;
+}
+
+.books-fair .book-fair-list .books-fair-list-area a:first-child {
+  margin-right: auto;
+}
+
+.books-fair .book-fair-list .books-fair-list-area a:nth-child(2), .books-fair .book-fair-list .books-fair-list-area a:nth-child(3) {
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.books-fair .book-fair-list .books-fair-list-area a:last-child {
+  margin-left: auto;
+}
+
+.books-fair .book-fair-list .books-fair-list-area a:hover {
+  -webkit-transform: translate(0, -20px);
+          transform: translate(0, -20px);
+}
+
+.books-fair .book-fair-other {
+  display: none;
+}
+
+.books-fair .main-btn {
+  margin-top: 5%;
+  margin-bottom: 2.5%;
+  padding-top: 20px;
+  padding-bottom: 20px;
+  -webkit-transform: translate(0, 0);
+          transform: translate(0, 0);
+  width: 100%;
+  text-align: center;
+  display: block;
+  background-color: #1d9d27;
+  -webkit-box-shadow: 0 7.5px 0 #16761d;
+          box-shadow: 0 7.5px 0 #16761d;
+  color: whitesmoke;
+  font-size: 24px;
+  font-weight: bold;
+  -webkit-transition: 0.1s linear;
+  transition: 0.1s linear;
+  letter-spacing: 4px;
+  border-radius: 10px;
+}
+
+.books-fair .main-btn:hover {
+  -webkit-transform: translate(0, 7.5px);
+          transform: translate(0, 7.5px);
+  background-color: #1a8d23;
+  -webkit-box-shadow: 0 0px 0 #16761d;
+          box-shadow: 0 0px 0 #16761d;
+}
+
+/*活動說明*/
 .others {
   padding-top: 2.5%;
   padding-bottom: 2.5%;
@@ -4079,6 +3999,7 @@ header .menu > li:last-child a {
 
 .others span {
   font-size: 16px;
+  letter-spacing: 2px;
   font-weight: bold;
   color: #1d9d27;
 }
@@ -4093,9 +4014,11 @@ header .menu > li:last-child a {
   padding-bottom: 0.5%;
   font-size: 16px;
   line-height: 24px;
+  letter-spacing: 1px;
   color: #505050;
 }
 
+/*頁腳資訊*/
 footer {
   background-color: #e6e6e6;
 }
@@ -4116,7 +4039,8 @@ footer div {
 
 footer div p {
   color: #505050;
-  font-size: 12px;
+  font-size: 14px;
+  line-height: 21px;
   letter-spacing: 2px;
 }
 
@@ -4126,5 +4050,971 @@ footer div p:first-child {
 
 footer div p:last-child {
   margin-left: auto;
+}
+
+@media (max-width: 1280px) {
+  header .menu li a {
+    padding-top: 25px;
+    padding-bottom: 25px;
+    font-size: 16px;
+    letter-spacing: 1px;
+  }
+  header .menu > li:first-child {
+    margin-right: auto;
+  }
+  header .menu > li:nth-child(2) {
+    margin-right: 5%;
+  }
+  header .menu > li:nth-child(2) a {
+    position: relative;
+  }
+  header .menu > li:last-child {
+    margin-left: 5%;
+  }
+  .main {
+    /*活動主題*/
+  }
+  .main .main-content h1 {
+    font-size: 36px;
+    line-height: 54px;
+    letter-spacing: 3px;
+  }
+  .main .main-content p {
+    font-size: 18px;
+    line-height: 27px;
+    letter-spacing: 2px;
+  }
+  .activities {
+    margin-top: 2.5%;
+    margin-bottom: 2.5%;
+    margin-left: 10%;
+    margin-right: 10%;
+    /*活動操作步驟*/
+  }
+  .activities .activities-title {
+    margin-top: 2.5%;
+    margin-bottom: 2.5%;
+    font-size: 24px;
+    font-weight: bold;
+    letter-spacing: 2px;
+  }
+  .activities p {
+    font-size: 24px;
+    line-height: 36px;
+    letter-spacing: 2px;
+  }
+  .activities .activities-steps {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: horizontal;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: row;
+            flex-direction: row;
+  }
+  .activities .activities-steps .activities-steps-area {
+    padding-top: 5%;
+    padding-bottom: 2.5%;
+  }
+  .activities .activities-steps .activities-steps-area .activities-title-area-content p {
+    padding-top: 7.5%;
+    padding-bottom: 7.5%;
+    font-size: 21px;
+    letter-spacing: 4px;
+  }
+  .activities .activities-steps .activities-steps-area .activities-title-area-content span {
+    padding-top: 7.5%;
+    padding-bottom: 7.5%;
+    font-size: 18px;
+    letter-spacing: 2px;
+    line-height: 27px;
+  }
+  /*主題書展*/
+  .books-fair {
+    margin-top: 1.25%;
+    margin-bottom: 2.5%;
+    margin-left: 10%;
+    margin-right: 10%;
+    /*書展選單*/
+    /*全書展選單*/
+    /*書籍區塊*/
+    /*表單按鈕*/
+  }
+  .books-fair .books-fair-btn li a {
+    padding-left: 15px;
+    padding-right: 0;
+    padding-top: 15px;
+    padding-bottom: 15px;
+    font-size: 21px;
+    letter-spacing: 2px;
+  }
+  .books-fair .books-fair-btn li:last-child {
+    width: 7.5%;
+    min-width: 100px;
+  }
+  .books-fair .books-fair-all li a {
+    padding-left: 15px;
+    padding-right: 15px;
+    padding-top: 15px;
+    padding-bottom: 15px;
+    font-size: 21px;
+    letter-spacing: 2px;
+  }
+  .books-fair .book-fair-title {
+    padding-top: 2.5%;
+    padding-bottom: 0;
+    font-size: 24px;
+    letter-spacing: 3px;
+  }
+  .books-fair .book-fair-list p {
+    padding-top: 1.25%;
+    padding-bottom: 0;
+    font-size: 18px;
+    letter-spacing: 2px;
+  }
+  .books-fair .book-fair-list .books-fair-list-area {
+    margin-top: 2.5%;
+    margin-bottom: 2.5%;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: horizontal;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: row;
+            flex-direction: row;
+  }
+  .books-fair .book-fair-list .books-fair-list-area a {
+    padding-top: 0.5%;
+    padding-bottom: 0.5%;
+    width: 22.5%;
+  }
+  .books-fair .book-fair-list .books-fair-list-area a p {
+    letter-spacing: 2px;
+  }
+  .books-fair .book-fair-other {
+    display: none;
+  }
+  .books-fair .main-btn {
+    margin-top: 5%;
+    margin-bottom: 2.5%;
+    padding-top: 20px;
+    padding-bottom: 20px;
+    width: 100%;
+    -webkit-box-shadow: 0 7.5px 0 #16761d;
+            box-shadow: 0 7.5px 0 #16761d;
+    font-size: 24px;
+    letter-spacing: 4px;
+    border-radius: 10px;
+  }
+}
+
+@media (max-width: 1080px) {
+  .main {
+    /*活動主題*/
+  }
+  .main .main-content h1 {
+    font-size: 32px;
+    line-height: 48px;
+    letter-spacing: 3px;
+  }
+  .main .main-content p {
+    font-size: 16px;
+    line-height: 24px;
+    letter-spacing: 2px;
+  }
+  .activities {
+    margin-top: 2.5%;
+    margin-bottom: 2.5%;
+    margin-left: 10%;
+    margin-right: 10%;
+    /*活動操作步驟*/
+  }
+  .activities .activities-title {
+    margin-top: 2.5%;
+    margin-bottom: 2.5%;
+    font-size: 24px;
+    font-weight: bold;
+    letter-spacing: 2px;
+  }
+  .activities p {
+    font-size: 18px;
+    line-height: 27px;
+    letter-spacing: 2px;
+  }
+  .activities .activities-steps {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: horizontal;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: row;
+            flex-direction: row;
+  }
+  .activities .activities-steps .activities-steps-area {
+    padding-top: 5%;
+    padding-bottom: 2.5%;
+  }
+  .activities .activities-steps .activities-steps-area .activities-title-area-content p {
+    padding-top: 7.5%;
+    padding-bottom: 7.5%;
+    font-size: 18px;
+    letter-spacing: 4px;
+  }
+  .activities .activities-steps .activities-steps-area .activities-title-area-content span {
+    padding-top: 7.5%;
+    padding-bottom: 7.5%;
+    font-size: 16px;
+    letter-spacing: 2px;
+    line-height: 24px;
+  }
+  /*主題書展*/
+  .books-fair {
+    margin-top: 1.25%;
+    margin-bottom: 2.5%;
+    margin-left: 10%;
+    margin-right: 10%;
+    /*書展選單*/
+    /*全書展選單*/
+    /*書籍區塊*/
+    /*表單按鈕*/
+  }
+  .books-fair .books-fair-btn li a {
+    padding-left: 15px;
+    padding-right: 0;
+    padding-top: 12.5px;
+    padding-bottom: 12.5px;
+    font-size: 21px;
+    letter-spacing: 2px;
+  }
+  .books-fair .books-fair-btn li:last-child {
+    width: 7.5%;
+    min-width: 100px;
+  }
+  .books-fair .books-fair-all li a {
+    padding-left: 15px;
+    padding-right: 15px;
+    padding-top: 15px;
+    padding-bottom: 15px;
+    font-size: 21px;
+    letter-spacing: 2px;
+  }
+  .books-fair .book-fair-title {
+    padding-top: 5%;
+    padding-bottom: 0;
+    font-size: 24px;
+    letter-spacing: 3px;
+  }
+  .books-fair .book-fair-list p {
+    padding-top: 2.5%;
+    padding-bottom: 0;
+    font-size: 18px;
+    letter-spacing: 2px;
+  }
+  .books-fair .book-fair-list .books-fair-list-area {
+    margin-top: 5%;
+    margin-bottom: 5%;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: horizontal;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: row;
+            flex-direction: row;
+  }
+  .books-fair .book-fair-list .books-fair-list-area a {
+    padding-top: 0.5%;
+    padding-bottom: 0.5%;
+    width: 22.5%;
+  }
+  .books-fair .book-fair-list .books-fair-list-area a p {
+    letter-spacing: 2px;
+  }
+  .books-fair .book-fair-other {
+    display: none;
+  }
+  .books-fair .main-btn {
+    margin-top: 7.5%;
+    margin-bottom: 7.5%;
+    padding-top: 20px;
+    padding-bottom: 20px;
+    width: 100%;
+    -webkit-box-shadow: 0 7.5px 0 #16761d;
+            box-shadow: 0 7.5px 0 #16761d;
+    font-size: 24px;
+    letter-spacing: 4px;
+    border-radius: 10px;
+  }
+}
+
+@media (max-width: 960px) {
+  .main {
+    /*活動主題*/
+  }
+  .main .main-content h1 {
+    font-size: 24px;
+    line-height: 36px;
+    letter-spacing: 2px;
+  }
+  .activities {
+    margin-top: 12.5%;
+    margin-bottom: 12.5%;
+    margin-left: 10%;
+    margin-right: 10%;
+    /*活動操作步驟*/
+  }
+  .activities .activities-title {
+    margin-top: 2.5%;
+    margin-bottom: 2.5%;
+    font-size: 24px;
+    font-weight: bold;
+    letter-spacing: 2px;
+  }
+  .activities p {
+    font-size: 18px;
+    line-height: 27px;
+    letter-spacing: 2px;
+  }
+  .activities .activities-steps {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: horizontal;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: row;
+            flex-direction: row;
+    -ms-flex-wrap: wrap;
+        flex-wrap: wrap;
+  }
+  .activities .activities-steps .activities-steps-area {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: horizontal;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: row;
+            flex-direction: row;
+    padding-top: 5%;
+    padding-bottom: 2.5%;
+    width: 100%;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+  }
+  .activities .activities-steps .activities-steps-area img {
+    margin-right: auto;
+    width: 42.5%;
+  }
+  .activities .activities-steps .activities-steps-area .activities-title-area-content {
+    margin-right: 0;
+    width: 42.5%;
+  }
+  .activities .activities-steps .activities-steps-area .activities-title-area-content p {
+    padding-top: 0;
+    padding-bottom: 7.5%;
+    font-size: 24px;
+    letter-spacing: 4px;
+  }
+  .activities .activities-steps .activities-steps-area .activities-title-area-content span {
+    padding-top: 7.5%;
+    padding-bottom: 7.5%;
+    font-size: 18px;
+    letter-spacing: 2px;
+    line-height: 24px;
+  }
+  /*主題書展*/
+  .books-fair {
+    margin-top: 1.25%;
+    margin-bottom: 2.5%;
+    margin-left: 10%;
+    margin-right: 10%;
+    /*書展選單*/
+    /*全書展選單*/
+    /*書籍區塊*/
+    /*表單按鈕*/
+  }
+  .books-fair .books-fair-btn li a {
+    padding-left: 15px;
+    padding-right: 0;
+    padding-top: 12.5px;
+    padding-bottom: 12.5px;
+    font-size: 21px;
+    letter-spacing: 2px;
+  }
+  .books-fair .books-fair-btn li:first-child {
+    width: 92.5%;
+  }
+  .books-fair .books-fair-btn li:nth-child(2) {
+    display: none;
+  }
+  .books-fair .books-fair-btn li:last-child {
+    width: 7.5%;
+    min-width: 100px;
+  }
+  .books-fair .books-fair-all li a {
+    padding-left: 15px;
+    padding-right: 15px;
+    padding-top: 15px;
+    padding-bottom: 15px;
+    font-size: 21px;
+    letter-spacing: 2px;
+  }
+  .books-fair .book-fair-title {
+    padding-top: 5%;
+    padding-bottom: 0;
+    font-size: 24px;
+    letter-spacing: 3px;
+  }
+  .books-fair .book-fair-list p {
+    padding-top: 2.5%;
+    padding-bottom: 0;
+    font-size: 18px;
+    letter-spacing: 2px;
+  }
+  .books-fair .book-fair-list .books-fair-list-area {
+    margin-top: 5%;
+    margin-bottom: 5%;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: horizontal;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: row;
+            flex-direction: row;
+  }
+  .books-fair .book-fair-list .books-fair-list-area a {
+    padding-top: 0.5%;
+    padding-bottom: 0.5%;
+    width: 22.5%;
+  }
+  .books-fair .book-fair-list .books-fair-list-area a p {
+    letter-spacing: 2px;
+  }
+  .books-fair .book-fair-other {
+    display: none;
+  }
+  .books-fair .main-btn {
+    margin-top: 7.5%;
+    margin-bottom: 7.5%;
+    padding-top: 20px;
+    padding-bottom: 20px;
+    width: 100%;
+    -webkit-box-shadow: 0 7.5px 0 #16761d;
+            box-shadow: 0 7.5px 0 #16761d;
+    font-size: 24px;
+    letter-spacing: 4px;
+    border-radius: 10px;
+  }
+  footer div {
+    -ms-flex-wrap: wrap;
+        flex-wrap: wrap;
+  }
+  footer div p {
+    padding-top: 1.25%;
+    padding-bottom: 1.25%;
+    width: 100%;
+  }
+}
+
+@media (max-width: 768px) {
+  .books-fair {
+    margin-top: 5%;
+    margin-bottom: 10%;
+    margin-left: 10%;
+    margin-right: 10%;
+    /*書籍區塊*/
+    /*表單按鈕*/
+  }
+  .books-fair .book-fair-title {
+    padding-top: 5%;
+    padding-bottom: 0;
+    font-size: 24px;
+    letter-spacing: 2px;
+  }
+  .books-fair .book-fair-list p {
+    padding-top: 2.5%;
+    padding-bottom: 0;
+    font-size: 18px;
+    letter-spacing: 2px;
+  }
+  .books-fair .book-fair-list .books-fair-list-area {
+    margin-top: 7.5%;
+    margin-bottom: 7.5%;
+    -ms-flex-wrap: wrap;
+        flex-wrap: wrap;
+  }
+  .books-fair .book-fair-list .books-fair-list-area a {
+    margin-left: auto;
+    margin-right: auto;
+    padding-top: 2.5%;
+    padding-bottom: 2.5%;
+    width: 42.5%;
+  }
+  .books-fair .main-btn {
+    margin-top: 5%;
+    margin-bottom: 2.5%;
+    padding-top: 20px;
+    padding-bottom: 20px;
+  }
+  .others {
+    padding-top: 10%;
+    padding-bottom: 10%;
+    margin-left: 10%;
+    margin-right: 10%;
+  }
+  .others ul {
+    margin-left: 24px;
+    list-style-type: decimal;
+  }
+  .others ul li {
+    padding-top: 2.5%;
+    padding-bottom: 2.5%;
+    font-size: 16px;
+    line-height: 24px;
+    color: #505050;
+  }
+}
+
+@media (max-width: 480px) {
+  header {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: none;
+    margin: auto;
+    width: 100%;
+    background-color: whitesmoke;
+    z-index: 9999;
+  }
+  header .menu {
+    margin-left: 10%;
+    margin-right: 10%;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: horizontal;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: row;
+            flex-direction: row;
+    -ms-flex-wrap: wrap;
+        flex-wrap: wrap;
+  }
+  header .menu li a {
+    padding-top: 12.5px;
+    padding-bottom: 12.5px;
+  }
+  header .menu li:first-child {
+    margin-left: auto;
+    margin-right: auto;
+    width: 100%;
+    text-align: center;
+  }
+  header .menu li:nth-child(2) {
+    margin-right: 2.5%;
+  }
+  header .menu li:nth-child(3) {
+    margin-left: auto;
+    margin-right: auto;
+  }
+  header .menu li:last-child {
+    margin-left: 2.5%;
+  }
+  header .menu li:last-child a {
+    color: #1d9d27;
+  }
+  .main {
+    /*活動主題*/
+  }
+  .main .main-content h1 {
+    font-size: 24px;
+    line-height: 36px;
+    letter-spacing: 2px;
+  }
+  .main .main-content p {
+    padding-top: 2.5%;
+    padding-bottom: 2.5%;
+    font-size: 16px;
+    line-height: 24px;
+    letter-spacing: 2px;
+  }
+  .activities {
+    margin-top: 12.5%;
+    margin-bottom: 12.5%;
+    margin-left: 10%;
+    margin-right: 10%;
+    /*活動操作步驟*/
+  }
+  .activities .activities-title {
+    margin-top: 2.5%;
+    margin-bottom: 2.5%;
+    font-size: 24px;
+    font-weight: bold;
+    letter-spacing: 2px;
+  }
+  .activities p {
+    font-size: 18px;
+    line-height: 27px;
+    letter-spacing: 2px;
+  }
+  .activities .activities-steps {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: horizontal;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: row;
+            flex-direction: row;
+    -ms-flex-wrap: wrap;
+        flex-wrap: wrap;
+  }
+  .activities .activities-steps .activities-steps-area {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: horizontal;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: row;
+            flex-direction: row;
+    padding-top: 15%;
+    padding-bottom: 15%;
+    width: 100%;
+    -ms-flex-wrap: wrap;
+        flex-wrap: wrap;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+  }
+  .activities .activities-steps .activities-steps-area img {
+    margin-left: auto;
+    margin-right: auto;
+    padding-top: 5%;
+    padding-bottom: 5%;
+    width: 60%;
+  }
+  .activities .activities-steps .activities-steps-area .activities-title-area-content {
+    padding-top: 5%;
+    padding-bottom: 5%;
+    width: 100%;
+  }
+  .activities .activities-steps .activities-steps-area .activities-title-area-content p {
+    padding-top: 5%;
+    padding-bottom: 5%;
+    font-size: 21px;
+    letter-spacing: 4px;
+  }
+  .activities .activities-steps .activities-steps-area .activities-title-area-content span {
+    padding-top: 5%;
+    padding-bottom: 5%;
+    font-size: 16px;
+    letter-spacing: 1px;
+    line-height: 24px;
+  }
+  /*主題書展*/
+  .books-fair {
+    margin-top: 1.25%;
+    margin-bottom: 2.5%;
+    margin-left: 10%;
+    margin-right: 10%;
+    /*書展選單*/
+    /*全書展選單*/
+    /*書籍區塊*/
+    /*表單按鈕*/
+  }
+  .books-fair .books-fair-btn li a {
+    padding-left: 10px;
+    padding-right: 0;
+    padding-top: 15px;
+    padding-bottom: 15px;
+    font-size: 16px;
+    letter-spacing: 1px;
+  }
+  .books-fair .books-fair-btn li:first-child {
+    width: 92.5%;
+  }
+  .books-fair .books-fair-btn li:nth-child(2) {
+    display: none;
+  }
+  .books-fair .books-fair-btn li:last-child {
+    width: 5%;
+    min-width: 75px;
+  }
+  .books-fair .books-fair-all li a {
+    padding-left: 10px;
+    padding-right: 0;
+    padding-top: 15px;
+    padding-bottom: 15px;
+    font-size: 16px;
+    letter-spacing: 1px;
+  }
+  .books-fair .book-fair-title {
+    padding-top: 15%;
+    padding-bottom: 0;
+    font-size: 24px;
+    letter-spacing: 3px;
+  }
+  .books-fair .book-fair-list p {
+    padding-top: 2.5%;
+    padding-bottom: 0;
+    font-size: 16px;
+    line-height: 24px;
+    letter-spacing: 1px;
+  }
+  .books-fair .book-fair-list .books-fair-list-area {
+    margin-top: 5%;
+    margin-bottom: 10%;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: horizontal;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: row;
+            flex-direction: row;
+  }
+  .books-fair .book-fair-list .books-fair-list-area a {
+    padding-top: 10%;
+    padding-bottom: 10%;
+    width: 100%;
+  }
+  .books-fair .book-fair-list .books-fair-list-area a p {
+    font-size: 18px;
+    letter-spacing: 2px;
+  }
+  .books-fair .book-fair-other {
+    display: none;
+  }
+  .books-fair .main-btn {
+    margin-top: 7.5%;
+    margin-bottom: 15%;
+    padding-top: 12.5px;
+    padding-bottom: 12.5px;
+    font-size: 24px;
+    letter-spacing: 4px;
+    border-radius: 10px;
+  }
+}
+
+@media (max-width: 320px) {
+  /*活動主旨*/
+  .main-content-effect {
+    -webkit-animation: move-effect 0.5s 0.75s linear forwards;
+            animation: move-effect 0.5s 0.75s linear forwards;
+  }
+  @-webkit-keyframes move-effect {
+    0% {
+      bottom: 0;
+      opacity: 0;
+    }
+    100% {
+      bottom: 2.5%;
+      opacity: 1;
+    }
+  }
+  @keyframes move-effect {
+    0% {
+      bottom: 0;
+      opacity: 0;
+    }
+    100% {
+      bottom: 2.5%;
+      opacity: 1;
+    }
+  }
+  header {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: none;
+    margin: auto;
+    width: 100%;
+    background-color: whitesmoke;
+    z-index: 9999;
+  }
+  header .menu {
+    margin-left: 5%;
+    margin-right: 5%;
+  }
+  .main {
+    /*活動主題*/
+  }
+  .main .main-content {
+    position: absolute;
+    top: none;
+    left: 5%;
+    right: 5%;
+    bottom: 0;
+    margin: auto;
+    padding-left: 10px;
+    padding-right: 10px;
+    padding-top: 10px;
+    padding-bottom: 10px;
+  }
+  .main .main-content h1 {
+    font-size: 18px;
+    line-height: 27px;
+    letter-spacing: 1px;
+  }
+  .main .main-content p {
+    padding-top: 2.5%;
+    padding-bottom: 2.5%;
+    font-size: 16px;
+    line-height: 24px;
+    letter-spacing: 1px;
+  }
+  .activities {
+    margin-top: 15%;
+    margin-bottom: 15%;
+    margin-left: 5%;
+    margin-right: 5%;
+    /*活動操作步驟*/
+  }
+  .activities .activities-title {
+    margin-top: 2.5%;
+    margin-bottom: 2.5%;
+    font-size: 24px;
+    letter-spacing: 2px;
+  }
+  .activities p {
+    font-size: 16px;
+    line-height: 24px;
+    letter-spacing: 1px;
+  }
+  .activities .activities-steps .activities-steps-area {
+    padding-top: 10%;
+    padding-bottom: 10%;
+  }
+  .activities .activities-steps .activities-steps-area img {
+    width: 60%;
+  }
+  .activities .activities-steps .activities-steps-area .activities-title-area-content {
+    padding-top: 5%;
+    padding-bottom: 5%;
+  }
+  .activities .activities-steps .activities-steps-area .activities-title-area-content p {
+    padding-top: 5%;
+    padding-bottom: 5%;
+    font-size: 21px;
+    letter-spacing: 4px;
+  }
+  .activities .activities-steps .activities-steps-area .activities-title-area-content span {
+    padding-top: 2.5%;
+    padding-bottom: 5%;
+  }
+  /*主題書展*/
+  .books-fair {
+    margin-top: 1.25%;
+    margin-bottom: 2.5%;
+    margin-left: 5%;
+    margin-right: 5%;
+    /*書展選單*/
+    /*全書展選單*/
+    /*書籍區塊*/
+    /*表單按鈕*/
+  }
+  .books-fair .books-fair-btn li a {
+    padding-left: 10px;
+    padding-right: 0;
+    padding-top: 15px;
+    padding-bottom: 15px;
+    font-size: 16px;
+    letter-spacing: 1px;
+  }
+  .books-fair .books-fair-btn li:first-child {
+    width: 92.5%;
+  }
+  .books-fair .books-fair-btn li:nth-child(2) {
+    display: none;
+  }
+  .books-fair .books-fair-btn li:last-child {
+    width: 5%;
+    min-width: 75px;
+  }
+  .books-fair .books-fair-all li a {
+    padding-left: 10px;
+    padding-right: 0;
+    padding-top: 15px;
+    padding-bottom: 15px;
+    font-size: 16px;
+    letter-spacing: 1px;
+  }
+  .books-fair .book-fair-title {
+    padding-top: 15%;
+    padding-bottom: 0;
+    font-size: 24px;
+    letter-spacing: 3px;
+  }
+  .books-fair .book-fair-list p {
+    padding-top: 2.5%;
+    padding-bottom: 0;
+    font-size: 16px;
+    line-height: 24px;
+    letter-spacing: 1px;
+  }
+  .books-fair .book-fair-list .books-fair-list-area {
+    margin-top: 5%;
+    margin-bottom: 10%;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: horizontal;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: row;
+            flex-direction: row;
+  }
+  .books-fair .book-fair-list .books-fair-list-area a {
+    padding-top: 10%;
+    padding-bottom: 10%;
+    width: 100%;
+  }
+  .books-fair .book-fair-list .books-fair-list-area a p {
+    font-size: 18px;
+    letter-spacing: 2px;
+  }
+  .books-fair .book-fair-other {
+    display: none;
+  }
+  .books-fair .main-btn {
+    margin-top: 7.5%;
+    margin-bottom: 15%;
+    padding-top: 12.5px;
+    padding-bottom: 12.5px;
+    font-size: 21px;
+    letter-spacing: 3px;
+    border-radius: 10px;
+  }
+  .others {
+    padding-top: 12.5%;
+    padding-bottom: 12.5%;
+    margin-left: 5%;
+    margin-right: 5%;
+    border-top: 1px solid #c8c8c8;
+  }
+  .others span {
+    font-size: 16px;
+    letter-spacing: 2px;
+    font-weight: bold;
+    color: #1d9d27;
+  }
+  .others ul {
+    margin-left: 24px;
+    list-style-type: decimal;
+  }
+  .others ul li {
+    padding-top: 0.5%;
+    padding-bottom: 0.5%;
+    font-size: 16px;
+    line-height: 24px;
+    letter-spacing: 1px;
+    color: #505050;
+  }
+  footer {
+    background-color: #e6e6e6;
+  }
+  footer div {
+    margin-left: 5%;
+    margin-right: 5%;
+    padding-top: 12.5px;
+    padding-bottom: 12.5px;
+  }
 }
 /*# sourceMappingURL=style.css.map */

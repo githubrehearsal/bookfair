@@ -16,11 +16,21 @@
 		@content;
 	}
 }
-
+@mixin desktop-other{
+	@media (max-width: 1080px) {
+		@content;
+	}
+}
 
 //ipad-pro
 @mixin ipad-pro{
 	@media (max-width: 1024px){
+		@content;
+	}
+}
+
+@mixin tablet {
+	@media (max-width: 960px){
 		@content;
 	}
 }

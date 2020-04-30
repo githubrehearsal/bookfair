@@ -11,6 +11,7 @@ body{
     overflow-x: hidden;
 }
 
+/*主色*/
 .line{
     color: $line;
 }
@@ -19,6 +20,43 @@ body{
     color: $airiti;
 }
 
+/*js效果---*/
+/*書展頁籤開啟*/
+.books-fair-btn-active{
+    border: 1px solid $line !important;
+    color: $line !important;
+}
+/*全部書展開啟*/
+.books-fair-all-active{
+    background-color: $line !important;
+    color: $white !important;
+    border-color: $line !important;
+}
+/*次選單開啟*/
+.books-fair-list-active{
+    color: $line !important;
+}
+
+/*動畫效果*---/
+/*主選單*/
+.header-effect{
+    animation: header-effect 0.5s linear forwards;
+
+}
+@keyframes header-effect{
+    0%{@include translate(0, -50px);}
+    100%{@include translate(0, 0);}
+}
+/*活動主旨*/
+.main-content-effect{
+    animation: move-effect 0.5s 0.75s linear forwards; 
+}
+@keyframes move-effect{
+    0%{bottom:0; opacity: 0;}
+    100%{bottom: 5%; opacity: 1;}
+}
+
+/*主選單*/
 header{
     @include fixed(0, 0, none, 0, auto);
     width:100%;
@@ -34,17 +72,6 @@ header{
                 letter-spacing: 1px;
                 color: $deep-gray;
                 display: block;
-            }
-            ul{
-                @include m-t(1px);
-                @include absolute(none, 0, none, 0, auto);
-                background-color: $white;
-                box-sizing: border-box;
-                display: none;
-                li{
-                    @include m-x(10%, 10%);
-                    border-bottom:1px solid $light-gray;
-                }
             }
         }
         > li:first-child{
@@ -64,241 +91,204 @@ header{
         }
     }
 }
-.layoutA{
-    @include m-x(10%, 10%);
-    @include m-y(5%, 2.5%);
-    h1{
-        @include p-b(1%);
-        font-size: 60px;
-        line-height: 90px;
-        letter-spacing: 6px;
-        font-weight: bold;
-        color: $black;
-    }
-    > p{
-        @include p-y(0.5%, 0.5%);
-        font-size: 18px;
-        letter-spacing: 2px;
-        color: $deep-gray;
-
-    }
-    .book-fair{
-        @include m-y(2.5%, 2.5%);
-        @include flex-row;
-        width: 100%;
-        .book-fair-area{            
-            width:25%;
-            cursor: pointer;
-                .book-fair-area-title{
-                    height: 100%;
-                    position: relative;
-                .book-fair-area-title-tag{
-                    @include absolute(none, none, 15px, 15px, auto);
-                    height: 100px;
-                    width: 100px;
-                    background-color: $black;
-                    color: $white;
-                    border-radius: 10px;
-                    text-align: center;
-                    box-shadow: 0 0 5px $black;
-                    z-index: 9;
-                    p{
-                        @include absolute(0, 0, 0, 0, auto);
-                        height: 50px;
-                        width: 50px;
-                        font-size: 16px;
-                        line-height: 24px;
-                        z-index: 999;
-                        color: $light-gray;
-                    }
-                    &:after{
-                        @include absolute(0, 0, 0, 0, auto);
-                        content: "";
-                        height: 80%;
-                        width: 80%;
-                        border: 1px solid $light-gray;
-                        border-radius: 10px;
-                    }
-                }
-                .book-fair-area-title-img{
-                    height: 100%;
-                    width: 100%;
-                    background-size: cover;
-                    background-position: center center;
-                    position: relative;
-                    box-shadow: 0 0 0 $black;
-                    transition: 0.5s linear;
-                    p{
-                        @include p-t(100%);
-                        @include absolute(0, 0, 0, 0, auto);
-                        @include bg-color-a($black, 0.75);
-                        width: 100%;
-                        font-size: 24px;
-                        line-height: 36px;
-                        letter-spacing: 2px;
-                        text-align: center;
-                        color: $light-gray;
-                        opacity: 0;
-                        visibility: hidden;
-                        transition: 0.5s linear;
-                    }
-                }
-                .title-img1{
-                    background-color: $light-gray;
-                }
-                .title-img2{
-                    background-color: $gray;
-                }
-                .title-img3{
-                    background-color: $light-gray;
-                }
-                .title-img4{
-                    background-color: $gray;
-                }
-                .book-fair-area-title-img:hover p{
-                    visibility: visible;
-                    opacity: 1;
-                }
-            }
-        }
-    }
-}
-.layoutB{
-    @include m-b(5%);
+/*主視覺*/
+.main{
     height: 100vh;
+    width: 100%;
     background-color: $white*0.9;
-    position: relative;
-    .book-fair-content{
+    /*活動主題*/
+    .main-content{
         @include m-x(10%, 10%);
         @include p-x(25px, 25px);
         @include p-y(25px, 25px);
-        @include absolute(none, none, 5%, 10%, auto);
+        @include absolute(none, 10%, 0, 10%, auto);
         @include bg-color-a($white, 0.8);
+        opacity: 0;
         h1{
-            @include m-y(1%, 2%);
-            font-size: 48px;
+            @include m-y(1%, 1%);
+            font-size: 42px;
+            line-height: 63px;
             letter-spacing: 4px;
             font-weight: bold;
             color: $black;
         }
         p{
-            @include p-y(0.75%, 0.75%);
+            @include p-y(0.25%, 0.25%);
             font-size: 18px;
+            line-height: 27px;
             letter-spacing: 2px;
             color: $deep-gray;
         }
     }
 }
-.books-list{
-    @include p-y(2.5%, 2.5%);
+/*活動獎勵*/
+.activities{
+    @include m-y(2.5%, 2.5%);
     @include m-x(10%, 10%);
-    .books-list-btn{
-        transition: 0.5s;
-        div{
-            @include flex-row;
-            position: relative;
-            align-items: center;
-            h3{
-                @include m-r(auto);
-                font-size: 36px;
-                font-weight: bold;
-                letter-spacing: 4px;
-                span{
-                    @include p-x(5px, 5px);
-                    display: inline-block;
-                    position: relative;
-                    top:-2.5px;
+    .activities-title{
+        @include m-y(2.5%, 2.5%);
+        font-size: 36px;
+        font-weight: bold;
+        letter-spacing: 4px;
+        display: inline-block;
+    }
+    p{
+        font-size: 24px;
+        line-height: 36px;
+        letter-spacing: 4px;
+        color: $deep-gray;
+        span{
+            color: $line;
+        }
+    }
+    /*活動操作步驟*/
+    .activities-steps{
+        @include flex-row;
+        .activities-steps-area{
+            width: 20%;
+            @include p-y(2.5%, 2.5%);
+            .activities-title-area-content{
+                p{
+                    @include p-y(5%, 5%);
+                    font-size: 24px;
+                    letter-spacing: 4px;
+                    color: $line;
+                    font-weight: bold;
                 }
-            }
-            > ul{
-                @include m-y(auto, auto);
-                @include absolute(0, 0, none, none, none);
-                width: 190px;
-                background-color: $white;
-                box-shadow: 0 0 5px $light-gray;
-                border: 1px solid $light-gray;
-                text-align: right;
-                li{
-                    a{
-                        @include p-x(25px, 25px);
-                        @include p-y(10px, 10px);
-                        display: block;
-                        font-size: 18px;
-                        color: $white;
-                        background-color: $line;
-                        transition: 0.25s linear;
-                        letter-spacing: 1px;
-                    }
-                    a:hover{
-                        background-color: $line*0.9;
-                    }
-                    ul{
-                        display: none;
-                        li{
-                            a{
-                                @include p-y(10px, 10px);
-                                border-top:1px solid $light-gray;
-                                display: block;
-                                color: $deep-gray;
-                                background-color: $white;
-                                transition: 0.25s linear;
-                            }
-                            a:hover{
-                                background-color: $light-gray;
-                            }
-                        }
-                    }
+                span{
+                    @include p-y(5%, 5%);
+                    font-size: 21px;
+                    letter-spacing: 3px;
+                    line-height: 31.5px;
+                    color: $deep-gray;
                 }
             }
         }
+        div:first-child{
+            @include m-r(auto);
+        }
+        div:nth-child(2), div:nth-child(3){
+            @include m-x(auto, auto);
+        }
+        div:last-child{
+            @include m-l(auto);
+        }
     }
-    p{
-        @include p-y(2.5%, 2.5%);
-        font-size: 16px;
-        letter-spacing: 2px;
-        color: $deep-gray;
-    }
-    .books-list-area{
+}
+/*主題書展*/
+.books-fair{
+    @include m-y(1.25%, 2.5%);
+    @include m-x(10%, 10%);
+    /*書展選單*/
+    .books-fair-btn{
         @include flex-row;
-        a{
-            @include p-y(2.5%, 2.5%);
-            @include flex-col;
-            justify-content: space-around;
-            width:20%;
-            p{
+        li{
+            transition: 0.5s;
+            a{
+                @include p-x(15px, 0);
+                @include p-y(15px, 15px);
                 font-size: 24px;
-                color: $deep-gray;
                 letter-spacing: 2px;
+                font-weight: 500;
+                display: block;
+                border: 1px solid $light-gray;
+                color: $gray;
+                transition: background 0.25s linear;
+            }
+            a:hover{
+                background-color: $white*0.95;
+            }
+        }
+        li:first-child{
+            width:50%;
+        }
+        li:nth-child(2){
+            width:42.5%;
+        }
+        li:last-child{
+            width:7.5%;
+            min-width: 125px;
+            a{
+                @include p-x(0, 0);
+                color: $gray;
                 text-align: center;
             }
         }
-        a:first-child{
-            @include m-r(auto);
-        }
-        a:nth-child(2), a:nth-child(3){
-            @include m-x(auto, auto);
-        }
-        a:last-child{
-            @include m-l(auto);
-        }
-        a:nth-child(odd){
-            img{
-                @include m-b(5%);
+    }
+    /*全書展選單*/
+    .books-fair-all{
+        @include flex-col;
+        background-color: $white;
+        box-shadow: 0 3px 10px $light-gray*1.15;
+        display: none;
+        li{
+            border-bottom:1px solid $light-gray;
+            transition: 0.25s linear;
+            a{
+                @include p-x(15px, 15px);
+                @include p-y(15px, 15px);
+                font-size: 24px;
+                letter-spacing: 2px;
+                color: $gray;
+                display: block;
             }
-            p{
-                @include m-t(5%);
-            }
         }
-        a:nth-child(even){
-            flex-direction: column-reverse;
-            img{
-                @include m-t(5%);
+        li:last-child{
+            border:none;
+        }
+        li:hover{
+            background-color: $white*0.95;
+        }
+    }
+    .book-fair-title{
+        @include p-y(2.5%, 0);
+        font-size: 36px;
+        letter-spacing: 3px;
+        color: $deep-gray;
+    }
+    /*書籍區塊*/
+    .book-fair-list{
+        p{
+            @include p-y(1.25%, 0);
+            font-size: 24px;
+            letter-spacing: 2px;
+            color: $gray;
+        }
+        .books-fair-list-area{
+            @include m-y(2.5%, 2.5%);
+            @include flex-row;
+            a{
+                @include p-y(0.5%, 0.5%);
+                width:20%;
+                transition: 0.5s;
+                p{
+                    font-size: 16px;
+                    color: $deep-gray;
+                    letter-spacing: 2px;
+                    text-align: center;
+                    white-space: nowrap;
+                    text-overflow: ellipsis;
+                    overflow:hidden;
+                }
             }
-            p{
-                @include m-b(5%);
+            a:first-child{
+                @include m-r(auto);
+            }
+            a:nth-child(2), a:nth-child(3){
+                @include m-x(auto, auto);
+            }
+            a:last-child{
+                @include m-l(auto);
+            }
+            a:hover{
+                @include translate(0, -20px);
             }
         }
     }
+    .book-fair-other{
+        display: none;
+    }
+    /*表單按鈕*/
     .main-btn{
         @include m-y(5%, 2.5%);
         @include p-y(20px, 20px);
@@ -321,62 +311,14 @@ header{
         box-shadow: 0 0px 0 $line*0.75;        
     }
 }
-.activities{
-    @include m-y(2.5%, 2.5%);
-    @include m-x(10%, 10%);
-    .activities-title{
-        @include m-y(2.5%, 2.5%);
-        font-size: 36px;
-        font-weight: bold;
-        letter-spacing: 4px;
-        display: inline-block;
-    }
-    h2{
-        font-size: 24px;
-        line-height: 36px;
-        letter-spacing: 4px;
-        color: $deep-gray;
-        span{
-            color: $line;
-        }
-    }
-    .activities-steps{
-        @include flex-row;
-        div{
-            width: 22.5%;
-            @include p-y(2.5%, 2.5%);
-            p{
-                @include p-y(5%, 5%);
-                font-size: 24px;
-                letter-spacing: 4px;
-                color: $line;
-                font-weight: bold;
-            }
-            span{
-                @include p-y(5%, 5%);
-                font-size: 21px;
-                letter-spacing: 3px;
-                line-height: 31.5px;
-                color: $deep-gray;
-            }
-        }
-        div:first-child{
-            @include m-r(auto);
-        }
-        div:nth-child(2), div:nth-child(3){
-            @include m-x(auto, auto);
-        }
-        div:last-child{
-            @include m-l(auto);
-        }
-    }
-}
+/*活動說明*/
 .others{
     @include p-y(2.5%, 2.5%);
     @include m-x(10%, 10%);
     border-top: 1px solid $light-gray;
     span{
         font-size: 16px;
+        letter-spacing: 2px;
         font-weight: bold;
         color: $line;
     }
@@ -387,10 +329,12 @@ header{
             @include p-y(0.5%, 0.5%);
             font-size: 16px;
             line-height: 24px;
+            letter-spacing: 1px;
             color: $deep-gray;
         }
     }
 }
+/*頁腳資訊*/
 footer{
     background-color: $light-gray*1.15;
     div{
@@ -399,7 +343,8 @@ footer{
         @include flex-row;
         p{
             color: $deep-gray;
-            font-size: 12px;
+            font-size: 14px;
+            line-height: 21px;
             letter-spacing: 2px;
         }
         p:first-child{
@@ -407,6 +352,805 @@ footer{
         }
         p:last-child{
             @include m-l(auto);
+        }
+    }
+}
+
+@include desktop-s{
+    header{
+        .menu{
+            li{
+                a{
+                    @include p-y(25px, 25px);
+                    font-size:16px;
+                    letter-spacing: 1px;
+                }
+            }
+            > li:first-child{
+                @include m-r(auto);
+            }
+            > li:nth-child(2){
+                @include m-r(5%);
+                a{
+                    position: relative;
+                }
+            }
+            > li:last-child{
+                @include m-l(5%);
+
+            }
+        }
+    }
+    .main{
+        /*活動主題*/
+        .main-content{
+            h1{
+                font-size: 36px;
+                line-height: 54px;
+                letter-spacing: 3px;
+            }
+            p{
+                font-size: 18px;
+                line-height: 27px;
+                letter-spacing: 2px;
+            }
+        }
+    }
+    .activities{
+        @include m-y(2.5%, 2.5%);
+        @include m-x(10%, 10%);
+        .activities-title{
+            @include m-y(2.5%, 2.5%);
+            font-size: 24px;
+            font-weight: bold;
+            letter-spacing: 2px;
+        }
+        p{
+            font-size: 24px;
+            line-height: 36px;
+            letter-spacing: 2px;
+        }
+        /*活動操作步驟*/
+        .activities-steps{
+            @include flex-row;
+            .activities-steps-area{
+                @include p-y(5%, 2.5%);
+                .activities-title-area-content{
+                    p{
+                        @include p-y(7.5%, 7.5%);
+                        font-size: 21px;
+                        letter-spacing: 4px;
+                    }
+                    span{
+                        @include p-y(7.5%, 7.5%);
+                        font-size: 18px;
+                        letter-spacing: 2px;
+                        line-height: 27px;
+                    }
+                }
+            }
+        }
+    }
+    /*主題書展*/
+    .books-fair{
+        @include m-y(1.25%, 2.5%);
+        @include m-x(10%, 10%);
+        /*書展選單*/
+        .books-fair-btn{
+            li{
+                a{
+                    @include p-x(15px, 0);
+                    @include p-y(15px, 15px);
+                    font-size: 21px;
+                    letter-spacing: 2px;
+                }
+            }
+            li:last-child{
+                width:7.5%;
+                min-width: 100px;
+            }
+        }
+        /*全書展選單*/
+        .books-fair-all{
+            li{
+                a{
+                    @include p-x(15px, 15px);
+                    @include p-y(15px, 15px);
+                    font-size: 21px;
+                    letter-spacing: 2px;
+                }
+            }
+        }
+        .book-fair-title{
+            @include p-y(2.5%, 0);
+            font-size: 24px;
+            letter-spacing: 3px;
+        }
+        /*書籍區塊*/
+        .book-fair-list{
+            p{
+                @include p-y(1.25%, 0);
+                font-size: 18px;
+                letter-spacing: 2px;
+            }
+            .books-fair-list-area{
+                @include m-y(2.5%, 2.5%);
+                @include flex-row;
+                a{
+                    @include p-y(0.5%, 0.5%);
+                    width:22.5%;
+                    p{
+                        letter-spacing: 2px;
+                    }
+                }
+            }
+        }
+        .book-fair-other{
+            display: none;
+        }
+        /*表單按鈕*/
+        .main-btn{
+            @include m-y(5%, 2.5%);
+            @include p-y(20px, 20px);
+            width: 100%;
+            box-shadow: 0 7.5px 0 $line*0.75;
+            font-size: 24px;
+            letter-spacing: 4px;
+            border-radius: 10px;
+        }
+    }
+}
+@include desktop-other{
+    .main{
+        /*活動主題*/
+        .main-content{
+            h1{
+                font-size: 32px;
+                line-height: 48px;
+                letter-spacing: 3px;
+            }
+            p{
+                font-size: 16px;
+                line-height: 24px;
+                letter-spacing: 2px;
+            }
+        }
+    }
+    .activities{
+        @include m-y(2.5%, 2.5%);
+        @include m-x(10%, 10%);
+        .activities-title{
+            @include m-y(2.5%, 2.5%);
+            font-size: 24px;
+            font-weight: bold;
+            letter-spacing: 2px;
+        }
+        p{
+            font-size: 18px;
+            line-height: 27px;
+            letter-spacing: 2px;
+        }
+        /*活動操作步驟*/
+        .activities-steps{
+            @include flex-row;
+            .activities-steps-area{
+                @include p-y(5%, 2.5%);
+                .activities-title-area-content{
+                    p{
+                        @include p-y(7.5%, 7.5%);
+                        font-size: 18px;
+                        letter-spacing: 4px;
+                    }
+                    span{
+                        @include p-y(7.5%, 7.5%);
+                        font-size: 16px;
+                        letter-spacing: 2px;
+                        line-height: 24px;
+                    }
+                }
+            }
+        }
+    }
+    /*主題書展*/
+    .books-fair{
+        @include m-y(1.25%, 2.5%);
+        @include m-x(10%, 10%);
+        /*書展選單*/
+        .books-fair-btn{
+            li{
+                a{
+                    @include p-x(15px, 0);
+                    @include p-y(12.5px, 12.5px);
+                    font-size: 21px;
+                    letter-spacing: 2px;
+                }
+            }
+            li:last-child{
+                width:7.5%;
+                min-width: 100px;
+            }
+        }
+        /*全書展選單*/
+        .books-fair-all{
+            li{
+                a{
+                    @include p-x(15px, 15px);
+                    @include p-y(15px, 15px);
+                    font-size: 21px;
+                    letter-spacing: 2px;
+                }
+            }
+        }
+        .book-fair-title{
+            @include p-y(5%, 0);
+            font-size: 24px;
+            letter-spacing: 3px;
+        }
+        /*書籍區塊*/
+        .book-fair-list{
+            p{
+                @include p-y(2.5%, 0);
+                font-size: 18px;
+                letter-spacing: 2px;
+            }
+            .books-fair-list-area{
+                @include m-y(5%, 5%);
+                @include flex-row;
+                a{
+                    @include p-y(0.5%, 0.5%);
+                    width:22.5%;
+                    p{
+                        letter-spacing: 2px;
+                    }
+                }
+            }
+        }
+        .book-fair-other{
+            display: none;
+        }
+        /*表單按鈕*/
+        .main-btn{
+            @include m-y(7.5%, 7.5%);
+            @include p-y(20px, 20px);
+            width: 100%;
+            box-shadow: 0 7.5px 0 $line*0.75;
+            font-size: 24px;
+            letter-spacing: 4px;
+            border-radius: 10px;
+        }
+    }
+}
+@include tablet{
+    .main{
+        /*活動主題*/
+        .main-content{
+            h1{
+                font-size: 24px;
+                line-height: 36px;
+                letter-spacing: 2px;
+            }
+        }
+    }
+    .activities{
+        @include m-y(12.5%, 12.5%);
+        @include m-x(10%, 10%);
+        .activities-title{
+            @include m-y(2.5%, 2.5%);
+            font-size: 24px;
+            font-weight: bold;
+            letter-spacing: 2px;
+        }
+        p{
+            font-size: 18px;
+            line-height: 27px;
+            letter-spacing: 2px;
+        }
+        /*活動操作步驟*/
+        .activities-steps{
+            @include flex-row;
+            flex-wrap: wrap;
+            .activities-steps-area{
+                @include flex-row;
+                @include p-y(5%, 2.5%);
+                width:100%;
+                align-items: center;
+                img{
+                    @include m-r(auto);
+                    width: 42.5%;
+                }
+                .activities-title-area-content{
+                    @include m-r(0);
+                    width: 42.5%;
+                    p{
+                        @include p-y(0, 7.5%);
+                        font-size: 24px;
+                        letter-spacing: 4px;
+                    }
+                    span{
+                        @include p-y(7.5%, 7.5%);
+                        font-size: 18px;
+                        letter-spacing: 2px;
+                        line-height: 24px;
+                    }
+                }
+            }
+        }
+    }
+    /*主題書展*/
+    .books-fair{
+        @include m-y(1.25%, 2.5%);
+        @include m-x(10%, 10%);
+        /*書展選單*/
+        .books-fair-btn{
+            li{
+                a{
+                    @include p-x(15px, 0);
+                    @include p-y(12.5px, 12.5px);
+                    font-size: 21px;
+                    letter-spacing: 2px;
+                }
+            }
+            li:first-child{
+                width:92.5%;
+            }
+            li:nth-child(2){
+                display: none;
+            }
+            li:last-child{
+                width:7.5%;
+                min-width: 100px;
+            }
+        }
+        /*全書展選單*/
+        .books-fair-all{
+            li{
+                a{
+                    @include p-x(15px, 15px);
+                    @include p-y(15px, 15px);
+                    font-size: 21px;
+                    letter-spacing: 2px;
+                }
+            }
+        }
+        .book-fair-title{
+            @include p-y(5%, 0);
+            font-size: 24px;
+            letter-spacing: 3px;
+        }
+        /*書籍區塊*/
+        .book-fair-list{
+            p{
+                @include p-y(2.5%, 0);
+                font-size: 18px;
+                letter-spacing: 2px;
+            }
+            .books-fair-list-area{
+                @include m-y(5%, 5%);
+                @include flex-row;
+                a{
+                    @include p-y(0.5%, 0.5%);
+                    width:22.5%;
+                    p{
+                        letter-spacing: 2px;
+                    }
+                }
+            }
+        }
+        .book-fair-other{
+            display: none;
+        }
+        /*表單按鈕*/
+        .main-btn{
+            @include m-y(7.5%, 7.5%);
+            @include p-y(20px, 20px);
+            width: 100%;
+            box-shadow: 0 7.5px 0 $line*0.75;
+            font-size: 24px;
+            letter-spacing: 4px;
+            border-radius: 10px;
+        }
+    }
+    footer{
+        div{
+            flex-wrap: wrap;
+            p{
+                @include p-y(1.25%, 1.25%);
+                width:100%;
+            }
+        }
+    }
+}
+@include ipad{
+    .books-fair{
+        @include m-y(5%, 10%);
+        @include m-x(10%, 10%);
+        /*書籍區塊*/
+        .book-fair-title{
+            @include p-y(5%, 0);
+            font-size: 24px;
+            letter-spacing: 2px;
+        }
+        .book-fair-list{
+            p{
+                @include p-y(2.5%, 0);
+                font-size: 18px;
+                letter-spacing: 2px;
+            }
+            .books-fair-list-area{
+                @include m-y(7.5%, 7.5%);
+                flex-wrap: wrap;
+                a{
+                    @include m-x(auto, auto);
+                    @include p-y(2.5%, 2.5%);
+                    width:42.5%;
+                }
+            }
+        }
+        /*表單按鈕*/
+        .main-btn{
+            @include m-y(5%, 2.5%);
+            @include p-y(20px, 20px);
+        }
+    }
+    .others{
+        @include p-y(10%, 10%);
+        @include m-x(10%, 10%);
+        ul{
+            @include m-l(24px);
+            list-style-type:decimal;
+            li{
+                @include p-y(2.5%, 2.5%);
+                font-size: 16px;
+                line-height: 24px;
+                color: $deep-gray;
+            }
+        }
+    }
+}
+@include mobile-l{
+    header{
+        @include fixed(0, 0, none, 0, auto);
+        width:100%;
+        background-color: $white;
+        z-index: 9999;
+        .menu{
+            @include m-x(10%, 10%);
+            @include flex-row;
+            flex-wrap: wrap;
+            li{
+                a{
+                    @include p-y(12.5px, 12.5px);
+                }
+            }
+            li:first-child{
+                @include m-x(auto, auto);
+                width:100%;
+                text-align: center;
+            }
+            li:nth-child(2){
+                @include m-r(2.5%);
+            }
+            li:nth-child(3){
+                @include m-x(auto, auto);
+            }
+            li:last-child{
+                @include m-l(2.5%);
+                a{
+                    color: $line;
+                }
+            }
+        }
+    }
+    .main{
+        /*活動主題*/
+        .main-content{
+            h1{
+                font-size: 24px;
+                line-height: 36px;
+                letter-spacing: 2px;
+            }
+            p{
+                @include p-y(2.5%, 2.5%);
+                font-size: 16px;
+                line-height: 24px;
+                letter-spacing: 2px;
+            }
+        }
+    }
+    .activities{
+        @include m-y(12.5%, 12.5%);
+        @include m-x(10%, 10%);
+        .activities-title{
+            @include m-y(2.5%, 2.5%);
+            font-size: 24px;
+            font-weight: bold;
+            letter-spacing: 2px;
+        }
+        p{
+            font-size: 18px;
+            line-height: 27px;
+            letter-spacing: 2px;
+        }
+        /*活動操作步驟*/
+        .activities-steps{
+            @include flex-row;
+            flex-wrap: wrap;
+            .activities-steps-area{
+                @include flex-row;
+                @include p-y(15%, 15%);
+                width:100%;
+                flex-wrap: wrap;
+                align-items: center;
+                img{
+                    @include m-x(auto, auto);
+                    @include p-y(5%, 5%);
+                    width: 60%;
+                }
+                .activities-title-area-content{
+                    @include p-y(5%, 5%);
+                    width: 100%;
+                    p{
+                        @include p-y(5%, 5%);
+                        font-size: 21px;
+                        letter-spacing: 4px;
+                    }
+                    span{
+                        @include p-y(5%, 5%);
+                        font-size: 16px;
+                        letter-spacing: 1px;
+                        line-height: 24px;
+                    }
+                }
+            }
+        }
+    }
+    /*主題書展*/
+    .books-fair{
+        @include m-y(1.25%, 2.5%);
+        @include m-x(10%, 10%);
+        /*書展選單*/
+        .books-fair-btn{
+            li{
+                a{
+                    @include p-x(10px, 0);
+                    @include p-y(15px, 15px);
+                    font-size: 16px;
+                    letter-spacing: 1px;
+                }
+            }
+            li:first-child{
+                width:92.5%;
+            }
+            li:nth-child(2){
+                display: none;
+            }
+            li:last-child{
+                width:5%;
+                min-width: 75px;
+            }
+        }
+        /*全書展選單*/
+        .books-fair-all{
+            li{
+                a{
+                    @include p-x(10px, 0);
+                    @include p-y(15px, 15px);
+                    font-size: 16px;
+                    letter-spacing: 1px;
+                }
+            }
+        }
+        .book-fair-title{
+            @include p-y(15%, 0);
+            font-size: 24px;
+            letter-spacing: 3px;
+        }
+        /*書籍區塊*/
+        .book-fair-list{
+            p{
+                @include p-y(2.5%, 0);
+                font-size: 16px;
+                line-height: 24px;
+                letter-spacing: 1px;
+            }
+            .books-fair-list-area{
+                @include m-y(5%, 10%);
+                @include flex-row;
+                a{
+                    @include p-y(10%, 10%);
+                    width:100%;
+                    p{
+                        font-size: 18px;
+                        letter-spacing: 2px;
+                    }
+                }
+            }
+        }
+        .book-fair-other{
+            display: none;
+        }
+        /*表單按鈕*/
+        .main-btn{
+            @include m-y(7.5%, 15%);
+            @include p-y(12.5px, 12.5px);
+            font-size: 24px;
+            letter-spacing: 4px;
+            border-radius: 10px;
+        }
+    }
+}
+@include mobile-s{
+    /*活動主旨*/
+    .main-content-effect{
+        animation: move-effect 0.5s 0.75s linear forwards; 
+    }
+    @keyframes move-effect{
+        0%{bottom:0; opacity: 0;}
+        100%{bottom: 2.5%; opacity: 1;}
+    }
+    header{
+        @include fixed(0, 0, none, 0, auto);
+        width:100%;
+        background-color: $white;
+        z-index: 9999;
+        .menu{
+            @include m-x(5%, 5%);
+        }
+    }
+    .main{
+        /*活動主題*/
+        .main-content{
+            @include absolute(none, 5%, 0, 5%, auto);
+            @include p-x(10px, 10px);
+            @include p-y(10px, 10px);
+            h1{
+                font-size: 18px;
+                line-height: 27px;
+                letter-spacing: 1px;
+            }
+            p{
+                @include p-y(2.5%, 2.5%);
+                font-size: 16px;
+                line-height: 24px;
+                letter-spacing: 1px;
+            }
+        }
+    }
+    .activities{
+        @include m-y(15%, 15%);
+        @include m-x(5%, 5%);
+        .activities-title{
+            @include m-y(2.5%, 2.5%);
+            font-size: 24px;
+            letter-spacing: 2px;
+        }
+        p{
+            font-size: 16px;
+            line-height: 24px;
+            letter-spacing: 1px;
+        }
+        /*活動操作步驟*/
+        .activities-steps{
+            .activities-steps-area{
+                @include p-y(10%, 10%);
+                img{
+                    width: 60%;
+                }
+                .activities-title-area-content{
+                    @include p-y(5%, 5%);
+                    p{
+                        @include p-y(5%, 5%);
+                        font-size: 21px;
+                        letter-spacing: 4px;
+                    }
+                    span{
+                        @include p-y(2.5%, 5%);
+                    }
+                }
+            }
+        }
+    }
+    /*主題書展*/
+    .books-fair{
+        @include m-y(1.25%, 2.5%);
+        @include m-x(5%, 5%);
+        /*書展選單*/
+        .books-fair-btn{
+            li{
+                a{
+                    @include p-x(10px, 0);
+                    @include p-y(15px, 15px);
+                    font-size: 16px;
+                    letter-spacing: 1px;
+                }
+            }
+            li:first-child{
+                width:92.5%;
+            }
+            li:nth-child(2){
+                display: none;
+            }
+            li:last-child{
+                width:5%;
+                min-width: 75px;
+            }
+        }
+        /*全書展選單*/
+        .books-fair-all{
+            li{
+                a{
+                    @include p-x(10px, 0);
+                    @include p-y(15px, 15px);
+                    font-size: 16px;
+                    letter-spacing: 1px;
+                }
+            }
+        }
+        .book-fair-title{
+            @include p-y(15%, 0);
+            font-size: 24px;
+            letter-spacing: 3px;
+        }
+        /*書籍區塊*/
+        .book-fair-list{
+            p{
+                @include p-y(2.5%, 0);
+                font-size: 16px;
+                line-height: 24px;
+                letter-spacing: 1px;
+            }
+            .books-fair-list-area{
+                @include m-y(5%, 10%);
+                @include flex-row;
+                a{
+                    @include p-y(10%, 10%);
+                    width:100%;
+                    p{
+                        font-size: 18px;
+                        letter-spacing: 2px;
+                    }
+                }
+            }
+        }
+        .book-fair-other{
+            display: none;
+        }
+        /*表單按鈕*/
+        .main-btn{
+            @include m-y(7.5%, 15%);
+            @include p-y(12.5px, 12.5px);
+            font-size: 21px;
+            letter-spacing: 3px;
+            border-radius: 10px;
+        }
+    }
+    .others{
+        @include p-y(12.5%, 12.5%);
+        @include m-x(5%, 5%);
+        border-top: 1px solid $light-gray;
+        span{
+            font-size: 16px;
+            letter-spacing: 2px;
+            font-weight: bold;
+            color: $line;
+        }
+        ul{
+            @include m-l(24px);
+            list-style-type:decimal;
+            li{
+                @include p-y(0.5%, 0.5%);
+                font-size: 16px;
+                line-height: 24px;
+                letter-spacing: 1px;
+                color: $deep-gray;
+            }
+        }
+    }
+    footer{
+        background-color: $light-gray*1.15;
+        div{
+            @include m-x(5%, 5%);
+            @include p-y(12.5px, 12.5px);
         }
     }
 }
