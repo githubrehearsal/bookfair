@@ -3,8 +3,16 @@ $(document).ready(function () {
     $('.book-fair-title').html(BookFairNmae);
     /*展開全部書展*/
     $('.books-fair-btn-more').click(function (e) {
+        var BookFairBtn = $('.books-fair-btn-more').data('status');
         $('.books-fair-all').stop().slideToggle(1000);
         $(this).toggleClass('books-fair-all-active');
+        if ( BookFairBtn == 'open' ) {
+            $(this).html('展開')
+            $(this).data('status', 'close');
+        } else {
+            $(this).html('收合')
+            $(this).data('status', 'open');
+        }
         return false;
     });
 

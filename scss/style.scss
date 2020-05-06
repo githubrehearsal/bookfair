@@ -13,11 +13,11 @@ body{
 
 /*主色*/
 .line{
-    color: $line;
+    color: $line !important;
 }
 
 .airiti{
-    color: $airiti;
+    color: $airiti !important;
 }
 
 /*js效果---*/
@@ -96,6 +96,10 @@ header{
     height: 100vh;
     width: 100%;
     background-color: $white*0.9;
+    background-image: url(../image/banner.jpg);
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center center;
     /*活動主題*/
     .main-content{
         @include m-x(10%, 10%);
@@ -105,7 +109,7 @@ header{
         @include bg-color-a($white, 0.8);
         opacity: 0;
         h1{
-            @include m-y(1%, 1%);
+            @include m-y(0, 0.5%);
             font-size: 42px;
             line-height: 63px;
             letter-spacing: 4px;
@@ -117,6 +121,7 @@ header{
             font-size: 18px;
             line-height: 27px;
             letter-spacing: 2px;
+            font-weight: bold;
             color: $deep-gray;
         }
     }
@@ -177,7 +182,7 @@ header{
 }
 /*主題書展*/
 .books-fair{
-    @include m-y(1.25%, 2.5%);
+    @include p-y(2.5%, 2.5%);
     @include m-x(10%, 10%);
     /*書展選單*/
     .books-fair-btn{
@@ -217,10 +222,10 @@ header{
     }
     /*全書展選單*/
     .books-fair-all{
+        @include m-b(5%);
         @include flex-col;
         background-color: $white;
         box-shadow: 0 3px 10px $light-gray*1.15;
-        display: none;
         li{
             border-bottom:1px solid $light-gray;
             transition: 0.25s linear;
@@ -861,7 +866,7 @@ footer{
         @include m-y(12.5%, 12.5%);
         @include m-x(10%, 10%);
         .activities-title{
-            @include m-y(2.5%, 2.5%);
+            @include m-y(7.5%, 2.5%);
             font-size: 24px;
             font-weight: bold;
             letter-spacing: 2px;
@@ -906,7 +911,7 @@ footer{
     }
     /*主題書展*/
     .books-fair{
-        @include m-y(1.25%, 2.5%);
+        @include p-y(7.5%, 2.5%);
         @include m-x(10%, 10%);
         /*書展選單*/
         .books-fair-btn{
@@ -1020,7 +1025,7 @@ footer{
         @include m-y(15%, 15%);
         @include m-x(5%, 5%);
         .activities-title{
-            @include m-y(2.5%, 2.5%);
+            @include p-y(5%, 5%);
             font-size: 24px;
             letter-spacing: 2px;
         }

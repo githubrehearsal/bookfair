@@ -3528,11 +3528,11 @@ body {
 
 /*主色*/
 .line {
-  color: #1d9d27;
+  color: #1d9d27 !important;
 }
 
 .airiti {
-  color: #ff7200;
+  color: #ff7200 !important;
 }
 
 /*js效果---*/
@@ -3670,6 +3670,10 @@ header .menu > li:last-child a {
   height: 100vh;
   width: 100%;
   background-color: #dddddd;
+  background-image: url(../image/banner.jpg);
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center center;
   /*活動主題*/
 }
 
@@ -3691,8 +3695,8 @@ header .menu > li:last-child a {
 }
 
 .main .main-content h1 {
-  margin-top: 1%;
-  margin-bottom: 1%;
+  margin-top: 0;
+  margin-bottom: 0.5%;
   font-size: 42px;
   line-height: 63px;
   letter-spacing: 4px;
@@ -3706,6 +3710,7 @@ header .menu > li:last-child a {
   font-size: 18px;
   line-height: 27px;
   letter-spacing: 2px;
+  font-weight: bold;
   color: #505050;
 }
 
@@ -3787,8 +3792,8 @@ header .menu > li:last-child a {
 
 /*主題書展*/
 .books-fair {
-  margin-top: 1.25%;
-  margin-bottom: 2.5%;
+  padding-top: 2.5%;
+  padding-bottom: 2.5%;
   margin-left: 10%;
   margin-right: 10%;
   /*書展選單*/
@@ -3852,6 +3857,7 @@ header .menu > li:last-child a {
 }
 
 .books-fair .books-fair-all {
+  margin-bottom: 5%;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -3862,7 +3868,6 @@ header .menu > li:last-child a {
   background-color: whitesmoke;
   -webkit-box-shadow: 0 3px 10px #e6e6e6;
           box-shadow: 0 3px 10px #e6e6e6;
-  display: none;
 }
 
 .books-fair .books-fair-all li {
@@ -4645,7 +4650,7 @@ footer div p:last-child {
     /*活動操作步驟*/
   }
   .activities .activities-title {
-    margin-top: 2.5%;
+    margin-top: 7.5%;
     margin-bottom: 2.5%;
     font-size: 24px;
     font-weight: bold;
@@ -4711,8 +4716,8 @@ footer div p:last-child {
   }
   /*主題書展*/
   .books-fair {
-    margin-top: 1.25%;
-    margin-bottom: 2.5%;
+    padding-top: 7.5%;
+    padding-bottom: 2.5%;
     margin-left: 10%;
     margin-right: 10%;
     /*書展選單*/
@@ -4869,8 +4874,8 @@ footer div p:last-child {
     /*活動操作步驟*/
   }
   .activities .activities-title {
-    margin-top: 2.5%;
-    margin-bottom: 2.5%;
+    padding-top: 5%;
+    padding-bottom: 5%;
     font-size: 24px;
     letter-spacing: 2px;
   }
