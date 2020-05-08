@@ -3932,13 +3932,15 @@ header .menu > li:last-child a {
 }
 
 .books-fair .book-fair-list .books-fair-list-area a p {
-  font-size: 16px;
+  font-size: 18px;
   color: #505050;
   letter-spacing: 2px;
   text-align: center;
   white-space: nowrap;
   text-overflow: ellipsis;
   overflow: hidden;
+  -webkit-transition: 0.25s linear;
+  transition: 0.25s linear;
 }
 
 .books-fair .book-fair-list .books-fair-list-area a:first-child {
@@ -3957,6 +3959,10 @@ header .menu > li:last-child a {
 .books-fair .book-fair-list .books-fair-list-area a:hover {
   -webkit-transform: translate(0, -20px);
           transform: translate(0, -20px);
+}
+
+.books-fair .book-fair-list .books-fair-list-area a:hover p {
+  color: #1d9d27;
 }
 
 .books-fair .book-fair-other {
