@@ -61,6 +61,7 @@ header{
     @include fixed(0, 0, none, 0, auto);
     width:100%;
     background-color: $white;
+    box-shadow: 0 0 5px $light-gray;
     z-index: 9999;
     .menu{
         @include m-x(10%, 10%);
@@ -128,17 +129,23 @@ header{
 }
 /*活動獎勵*/
 .activities{
-    @include m-y(2.5%, 2.5%);
+    @include p-y(2.5%, 2.5%);
     @include m-x(10%, 10%);
     .activities-mobile{
         display: none;
     }
     .activities-title{
-        @include m-y(2.5%, 2.5%);
-        font-size: 36px;
-        font-weight: bold;
-        letter-spacing: 4px;
-        display: inline-block;
+        @include p-b(1.5%);
+        @include flex-row;
+        align-items: center;
+        p{
+            @include m-r(auto);
+            font-size: 36px;
+            font-weight: bold;
+        }
+        div{
+            @include m-l(auto);
+        }
     }
     p{
         font-size: 24px;
@@ -409,13 +416,13 @@ footer{
         }
     }
     .activities{
-        @include m-y(2.5%, 2.5%);
         @include m-x(10%, 10%);
         .activities-title{
-            @include m-y(2.5%, 2.5%);
+            p{
             font-size: 24px;
             font-weight: bold;
             letter-spacing: 2px;
+            }
         }
         p{
             font-size: 24px;
@@ -445,7 +452,6 @@ footer{
     }
     /*主題書展*/
     .books-fair{
-        @include m-y(1.25%, 2.5%);
         @include m-x(10%, 10%);
         /*書展選單*/
         .books-fair-btn{
@@ -529,13 +535,14 @@ footer{
         }
     }
     .activities{
-        @include m-y(2.5%, 2.5%);
+        @include p-y(3.5%, 3.5%);
         @include m-x(10%, 10%);
         .activities-title{
-            @include m-y(2.5%, 2.5%);
+            p{
             font-size: 24px;
             font-weight: bold;
             letter-spacing: 2px;
+            }
         }
         p{
             font-size: 18px;
@@ -565,8 +572,8 @@ footer{
     }
     /*主題書展*/
     .books-fair{
-        @include m-y(1.25%, 2.5%);
         @include m-x(10%, 10%);
+        @include p-y(3.5%, 3.5%);
         /*書展選單*/
         .books-fair-btn{
             li{
@@ -644,13 +651,14 @@ footer{
         }
     }
     .activities{
-        @include m-y(12.5%, 12.5%);
+        @include p-y(5%, 5%);
         @include m-x(10%, 10%);
         .activities-title{
-            @include m-y(2.5%, 2.5%);
+            p{
             font-size: 24px;
             font-weight: bold;
             letter-spacing: 2px;
+            }
         }
         p{
             font-size: 18px;
@@ -690,7 +698,7 @@ footer{
     }
     /*主題書展*/
     .books-fair{
-        @include m-y(1.25%, 2.5%);
+        @include p-y(5%, 5%);
         @include m-x(10%, 10%);
         /*書展選單*/
         .books-fair-btn{
@@ -774,7 +782,7 @@ footer{
 }
 @include ipad{
     .books-fair{
-        @include m-y(5%, 10%);
+        @include p-y(5%, 10%);
         @include m-x(10%, 10%);
         /*書籍區塊*/
         .book-fair-title{
@@ -873,7 +881,7 @@ footer{
         }
     }
     .activities{
-        @include m-y(12.5%, 12.5%);
+        @include p-y(7.5%, 12.5%);
         @include m-x(10%, 10%);
         .activities-mobile{
             display: block;
@@ -884,10 +892,11 @@ footer{
             }
         }
         .activities-title{
-            @include m-y(7.5%, 2.5%);
+            p{
             font-size: 24px;
             font-weight: bold;
             letter-spacing: 2px;
+            }
         }
         p{
             font-size: 16px;
@@ -1041,12 +1050,12 @@ footer{
         }
     }
     .activities{
-        @include m-y(15%, 15%);
         @include m-x(5%, 5%);
         .activities-title{
-            @include p-y(5%, 5%);
+            p{
             font-size: 24px;
             letter-spacing: 2px;
+            }
         }
         p{
             font-size: 16px;
@@ -1057,9 +1066,6 @@ footer{
         .activities-steps{
             .activities-steps-area{
                 @include p-y(10%, 10%);
-                img{
-                    width: 60%;
-                }
                 .activities-title-area-content{
                     @include p-y(5%, 5%);
                     p{
@@ -1076,7 +1082,6 @@ footer{
     }
     /*主題書展*/
     .books-fair{
-        @include m-y(1.25%, 2.5%);
         @include m-x(5%, 5%);
         /*書展選單*/
         .books-fair-btn{

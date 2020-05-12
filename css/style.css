@@ -3621,6 +3621,8 @@ header {
   margin: auto;
   width: 100%;
   background-color: whitesmoke;
+  -webkit-box-shadow: 0 0 5px #c8c8c8;
+          box-shadow: 0 0 5px #c8c8c8;
   z-index: 9999;
 }
 
@@ -3716,8 +3718,8 @@ header .menu > li:last-child a {
 
 /*活動獎勵*/
 .activities {
-  margin-top: 2.5%;
-  margin-bottom: 2.5%;
+  padding-top: 2.5%;
+  padding-bottom: 2.5%;
   margin-left: 10%;
   margin-right: 10%;
   /*活動操作步驟*/
@@ -3728,12 +3730,27 @@ header .menu > li:last-child a {
 }
 
 .activities .activities-title {
-  margin-top: 2.5%;
-  margin-bottom: 2.5%;
+  padding-bottom: 1.5%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.activities .activities-title p {
+  margin-right: auto;
   font-size: 36px;
   font-weight: bold;
-  letter-spacing: 4px;
-  display: inline-block;
+}
+
+.activities .activities-title div {
+  margin-left: auto;
 }
 
 .activities p {
@@ -4100,15 +4117,11 @@ footer div p:last-child {
     letter-spacing: 2px;
   }
   .activities {
-    margin-top: 2.5%;
-    margin-bottom: 2.5%;
     margin-left: 10%;
     margin-right: 10%;
     /*活動操作步驟*/
   }
-  .activities .activities-title {
-    margin-top: 2.5%;
-    margin-bottom: 2.5%;
+  .activities .activities-title p {
     font-size: 24px;
     font-weight: bold;
     letter-spacing: 2px;
@@ -4146,8 +4159,6 @@ footer div p:last-child {
   }
   /*主題書展*/
   .books-fair {
-    margin-top: 1.25%;
-    margin-bottom: 2.5%;
     margin-left: 10%;
     margin-right: 10%;
     /*書展選單*/
@@ -4238,15 +4249,13 @@ footer div p:last-child {
     letter-spacing: 2px;
   }
   .activities {
-    margin-top: 2.5%;
-    margin-bottom: 2.5%;
+    padding-top: 3.5%;
+    padding-bottom: 3.5%;
     margin-left: 10%;
     margin-right: 10%;
     /*活動操作步驟*/
   }
-  .activities .activities-title {
-    margin-top: 2.5%;
-    margin-bottom: 2.5%;
+  .activities .activities-title p {
     font-size: 24px;
     font-weight: bold;
     letter-spacing: 2px;
@@ -4284,10 +4293,10 @@ footer div p:last-child {
   }
   /*主題書展*/
   .books-fair {
-    margin-top: 1.25%;
-    margin-bottom: 2.5%;
     margin-left: 10%;
     margin-right: 10%;
+    padding-top: 3.5%;
+    padding-bottom: 3.5%;
     /*書展選單*/
     /*全書展選單*/
     /*書籍區塊*/
@@ -4371,15 +4380,13 @@ footer div p:last-child {
     letter-spacing: 2px;
   }
   .activities {
-    margin-top: 12.5%;
-    margin-bottom: 12.5%;
+    padding-top: 5%;
+    padding-bottom: 5%;
     margin-left: 10%;
     margin-right: 10%;
     /*活動操作步驟*/
   }
-  .activities .activities-title {
-    margin-top: 2.5%;
-    margin-bottom: 2.5%;
+  .activities .activities-title p {
     font-size: 24px;
     font-weight: bold;
     letter-spacing: 2px;
@@ -4438,8 +4445,8 @@ footer div p:last-child {
   }
   /*主題書展*/
   .books-fair {
-    margin-top: 1.25%;
-    margin-bottom: 2.5%;
+    padding-top: 5%;
+    padding-bottom: 5%;
     margin-left: 10%;
     margin-right: 10%;
     /*書展選單*/
@@ -4532,8 +4539,8 @@ footer div p:last-child {
 
 @media (max-width: 768px) {
   .books-fair {
-    margin-top: 5%;
-    margin-bottom: 10%;
+    padding-top: 5%;
+    padding-bottom: 10%;
     margin-left: 10%;
     margin-right: 10%;
     /*書籍區塊*/
@@ -4656,8 +4663,8 @@ footer div p:last-child {
     display: none;
   }
   .activities {
-    margin-top: 12.5%;
-    margin-bottom: 12.5%;
+    padding-top: 7.5%;
+    padding-bottom: 12.5%;
     margin-left: 10%;
     margin-right: 10%;
     /*活動操作步驟*/
@@ -4671,9 +4678,7 @@ footer div p:last-child {
     font-size: 16px;
     font-weight: bold;
   }
-  .activities .activities-title {
-    margin-top: 7.5%;
-    margin-bottom: 2.5%;
+  .activities .activities-title p {
     font-size: 24px;
     font-weight: bold;
     letter-spacing: 2px;
@@ -4890,15 +4895,11 @@ footer div p:last-child {
     letter-spacing: 1px;
   }
   .activities {
-    margin-top: 15%;
-    margin-bottom: 15%;
     margin-left: 5%;
     margin-right: 5%;
     /*活動操作步驟*/
   }
-  .activities .activities-title {
-    padding-top: 5%;
-    padding-bottom: 5%;
+  .activities .activities-title p {
     font-size: 24px;
     letter-spacing: 2px;
   }
@@ -4910,9 +4911,6 @@ footer div p:last-child {
   .activities .activities-steps .activities-steps-area {
     padding-top: 10%;
     padding-bottom: 10%;
-  }
-  .activities .activities-steps .activities-steps-area img {
-    width: 60%;
   }
   .activities .activities-steps .activities-steps-area .activities-title-area-content {
     padding-top: 5%;
@@ -4930,8 +4928,6 @@ footer div p:last-child {
   }
   /*主題書展*/
   .books-fair {
-    margin-top: 1.25%;
-    margin-bottom: 2.5%;
     margin-left: 5%;
     margin-right: 5%;
     /*書展選單*/
