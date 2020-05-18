@@ -177,6 +177,13 @@ header{
                     line-height: 31.5px;
                     color: $deep-gray;
                 }
+                a{
+                    @include p-y(5%, 5%);
+                    font-size: 21px;
+                    letter-spacing: 3px;
+                    line-height: 31.5px;
+                    color: $deep-gray;
+                }
             }
         }
         div:first-child{

@@ -3798,6 +3798,15 @@ header .menu > li:last-child a {
   color: #505050;
 }
 
+.activities .activities-steps .activities-steps-area .activities-title-area-content a {
+  padding-top: 5%;
+  padding-bottom: 5%;
+  font-size: 21px;
+  letter-spacing: 3px;
+  line-height: 31.5px;
+  color: #505050;
+}
+
 .activities .activities-steps div:first-child {
   margin-right: auto;
 }
