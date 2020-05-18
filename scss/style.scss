@@ -170,19 +170,22 @@ header{
                     color: $line;
                     font-weight: bold;
                 }
+                .activities-steps-img{
+                    @include m-x(7.5px, 7.5px);
+                    width:40px;
+                    vertical-align: middle;
+                }
                 span{
                     @include p-y(5%, 5%);
                     font-size: 21px;
                     letter-spacing: 3px;
                     line-height: 31.5px;
                     color: $deep-gray;
-                }
-                a{
-                    @include p-y(5%, 5%);
-                    font-size: 21px;
-                    letter-spacing: 3px;
-                    line-height: 31.5px;
-                    color: $deep-gray;
+                    img{
+                        @include m-x(7.5px, 7.5px);
+                        width: 30px;
+                        vertical-align: sub;
+                    }
                 }
             }
         }
@@ -681,7 +684,7 @@ footer{
                 @include p-y(5%, 2.5%);
                 width:100%;
                 align-items: center;
-                img{
+                .activities-steps-img{
                     @include m-r(auto);
                     width: 42.5%;
                 }
@@ -921,7 +924,7 @@ footer{
                 width:100%;
                 flex-wrap: wrap;
                 align-items: center;
-                img{
+                .activities-steps-img{
                     @include m-x(auto, auto);
                     @include p-y(5%, 5%);
                     width: 80%;

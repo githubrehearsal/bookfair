@@ -3789,6 +3789,13 @@ header .menu > li:last-child a {
   font-weight: bold;
 }
 
+.activities .activities-steps .activities-steps-area .activities-title-area-content .activities-steps-img {
+  margin-left: 7.5px;
+  margin-right: 7.5px;
+  width: 40px;
+  vertical-align: middle;
+}
+
 .activities .activities-steps .activities-steps-area .activities-title-area-content span {
   padding-top: 5%;
   padding-bottom: 5%;
@@ -3798,13 +3805,11 @@ header .menu > li:last-child a {
   color: #505050;
 }
 
-.activities .activities-steps .activities-steps-area .activities-title-area-content a {
-  padding-top: 5%;
-  padding-bottom: 5%;
-  font-size: 21px;
-  letter-spacing: 3px;
-  line-height: 31.5px;
-  color: #505050;
+.activities .activities-steps .activities-steps-area .activities-title-area-content span img {
+  margin-left: 7.5px;
+  margin-right: 7.5px;
+  width: 30px;
+  vertical-align: sub;
 }
 
 .activities .activities-steps div:first-child {
@@ -4431,7 +4436,7 @@ footer div p:last-child {
         -ms-flex-align: center;
             align-items: center;
   }
-  .activities .activities-steps .activities-steps-area img {
+  .activities .activities-steps .activities-steps-area .activities-steps-img {
     margin-right: auto;
     width: 42.5%;
   }
@@ -4726,7 +4731,7 @@ footer div p:last-child {
         -ms-flex-align: center;
             align-items: center;
   }
-  .activities .activities-steps .activities-steps-area img {
+  .activities .activities-steps .activities-steps-area .activities-steps-img {
     margin-left: auto;
     margin-right: auto;
     padding-top: 5%;
